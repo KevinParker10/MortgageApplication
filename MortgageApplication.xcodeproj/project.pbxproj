@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52B6116C1DB7D38700BD1E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */; };
+		52B6116E1DB7D38700BD1E65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6116D1DB7D38700BD1E65 /* ViewController.swift */; };
+		52B611711DB7D38700BD1E65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B6116F1DB7D38700BD1E65 /* Main.storyboard */; };
+		52B611731DB7D38700BD1E65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B611721DB7D38700BD1E65 /* Assets.xcassets */; };
+		52B611761DB7D38700BD1E65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B611741DB7D38700BD1E65 /* LaunchScreen.storyboard */; };
+		52B611811DB7D38700BD1E65 /* MortgageApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B611801DB7D38700BD1E65 /* MortgageApplicationTests.swift */; };
+		52B6118C1DB7D38700BD1E65 /* MortgageApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6118B1DB7D38700BD1E65 /* MortgageApplicationUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52B6117D1DB7D38700BD1E65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52B611601DB7D38700BD1E65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B611671DB7D38700BD1E65;
+			remoteInfo = MortgageApplication;
+		};
+		52B611881DB7D38700BD1E65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52B611601DB7D38700BD1E65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B611671DB7D38700BD1E65;
+			remoteInfo = MortgageApplication;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		52B611681DB7D38700BD1E65 /* MortgageApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MortgageApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52B6116D1DB7D38700BD1E65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52B611701DB7D38700BD1E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52B611721DB7D38700BD1E65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52B611751DB7D38700BD1E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52B611771DB7D38700BD1E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B6117C1DB7D38700BD1E65 /* MortgageApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MortgageApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B611801DB7D38700BD1E65 /* MortgageApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageApplicationTests.swift; sourceTree = "<group>"; };
+		52B611821DB7D38700BD1E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B611871DB7D38700BD1E65 /* MortgageApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MortgageApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B6118B1DB7D38700BD1E65 /* MortgageApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageApplicationUITests.swift; sourceTree = "<group>"; };
+		52B6118D1DB7D38700BD1E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52B611651DB7D38700BD1E65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B611791DB7D38700BD1E65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B611841DB7D38700BD1E65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52B6115F1DB7D38700BD1E65 = {
+			isa = PBXGroup;
+			children = (
+				52B6116A1DB7D38700BD1E65 /* MortgageApplication */,
+				52B6117F1DB7D38700BD1E65 /* MortgageApplicationTests */,
+				52B6118A1DB7D38700BD1E65 /* MortgageApplicationUITests */,
+				52B611691DB7D38700BD1E65 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52B611691DB7D38700BD1E65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52B611681DB7D38700BD1E65 /* MortgageApplication.app */,
+				52B6117C1DB7D38700BD1E65 /* MortgageApplicationTests.xctest */,
+				52B611871DB7D38700BD1E65 /* MortgageApplicationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52B6116A1DB7D38700BD1E65 /* MortgageApplication */ = {
+			isa = PBXGroup;
+			children = (
+				52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */,
+				52B6116D1DB7D38700BD1E65 /* ViewController.swift */,
+				52B6116F1DB7D38700BD1E65 /* Main.storyboard */,
+				52B611721DB7D38700BD1E65 /* Assets.xcassets */,
+				52B611741DB7D38700BD1E65 /* LaunchScreen.storyboard */,
+				52B611771DB7D38700BD1E65 /* Info.plist */,
+			);
+			path = MortgageApplication;
+			sourceTree = "<group>";
+		};
+		52B6117F1DB7D38700BD1E65 /* MortgageApplicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				52B611801DB7D38700BD1E65 /* MortgageApplicationTests.swift */,
+				52B611821DB7D38700BD1E65 /* Info.plist */,
+			);
+			path = MortgageApplicationTests;
+			sourceTree = "<group>";
+		};
+		52B6118A1DB7D38700BD1E65 /* MortgageApplicationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52B6118B1DB7D38700BD1E65 /* MortgageApplicationUITests.swift */,
+				52B6118D1DB7D38700BD1E65 /* Info.plist */,
+			);
+			path = MortgageApplicationUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52B611671DB7D38700BD1E65 /* MortgageApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B611901DB7D38700BD1E65 /* Build configuration list for PBXNativeTarget "MortgageApplication" */;
+			buildPhases = (
+				52B611641DB7D38700BD1E65 /* Sources */,
+				52B611651DB7D38700BD1E65 /* Frameworks */,
+				52B611661DB7D38700BD1E65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MortgageApplication;
+			productName = MortgageApplication;
+			productReference = 52B611681DB7D38700BD1E65 /* MortgageApplication.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52B6117B1DB7D38700BD1E65 /* MortgageApplicationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B611931DB7D38700BD1E65 /* Build configuration list for PBXNativeTarget "MortgageApplicationTests" */;
+			buildPhases = (
+				52B611781DB7D38700BD1E65 /* Sources */,
+				52B611791DB7D38700BD1E65 /* Frameworks */,
+				52B6117A1DB7D38700BD1E65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52B6117E1DB7D38700BD1E65 /* PBXTargetDependency */,
+			);
+			name = MortgageApplicationTests;
+			productName = MortgageApplicationTests;
+			productReference = 52B6117C1DB7D38700BD1E65 /* MortgageApplicationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52B611861DB7D38700BD1E65 /* MortgageApplicationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B611961DB7D38700BD1E65 /* Build configuration list for PBXNativeTarget "MortgageApplicationUITests" */;
+			buildPhases = (
+				52B611831DB7D38700BD1E65 /* Sources */,
+				52B611841DB7D38700BD1E65 /* Frameworks */,
+				52B611851DB7D38700BD1E65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52B611891DB7D38700BD1E65 /* PBXTargetDependency */,
+			);
+			name = MortgageApplicationUITests;
+			productName = MortgageApplicationUITests;
+			productReference = 52B611871DB7D38700BD1E65 /* MortgageApplicationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52B611601DB7D38700BD1E65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Kevin Parker";
+				TargetAttributes = {
+					52B611671DB7D38700BD1E65 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					52B6117B1DB7D38700BD1E65 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 52B611671DB7D38700BD1E65;
+					};
+					52B611861DB7D38700BD1E65 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 52B611671DB7D38700BD1E65;
+					};
+				};
+			};
+			buildConfigurationList = 52B611631DB7D38700BD1E65 /* Build configuration list for PBXProject "MortgageApplication" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52B6115F1DB7D38700BD1E65;
+			productRefGroup = 52B611691DB7D38700BD1E65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52B611671DB7D38700BD1E65 /* MortgageApplication */,
+				52B6117B1DB7D38700BD1E65 /* MortgageApplicationTests */,
+				52B611861DB7D38700BD1E65 /* MortgageApplicationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52B611661DB7D38700BD1E65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B611761DB7D38700BD1E65 /* LaunchScreen.storyboard in Resources */,
+				52B611731DB7D38700BD1E65 /* Assets.xcassets in Resources */,
+				52B611711DB7D38700BD1E65 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B6117A1DB7D38700BD1E65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B611851DB7D38700BD1E65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52B611641DB7D38700BD1E65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B6116E1DB7D38700BD1E65 /* ViewController.swift in Sources */,
+				52B6116C1DB7D38700BD1E65 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B611781DB7D38700BD1E65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B611811DB7D38700BD1E65 /* MortgageApplicationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B611831DB7D38700BD1E65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B6118C1DB7D38700BD1E65 /* MortgageApplicationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52B6117E1DB7D38700BD1E65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52B611671DB7D38700BD1E65 /* MortgageApplication */;
+			targetProxy = 52B6117D1DB7D38700BD1E65 /* PBXContainerItemProxy */;
+		};
+		52B611891DB7D38700BD1E65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52B611671DB7D38700BD1E65 /* MortgageApplication */;
+			targetProxy = 52B611881DB7D38700BD1E65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52B6116F1DB7D38700BD1E65 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52B611701DB7D38700BD1E65 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52B611741DB7D38700BD1E65 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52B611751DB7D38700BD1E65 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52B6118E1DB7D38700BD1E65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52B6118F1DB7D38700BD1E65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52B611911DB7D38700BD1E65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MortgageApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kevo.MortgageApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		52B611921DB7D38700BD1E65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MortgageApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kevo.MortgageApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		52B611941DB7D38700BD1E65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MortgageApplicationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kevo.MortgageApplicationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MortgageApplication.app/MortgageApplication";
+			};
+			name = Debug;
+		};
+		52B611951DB7D38700BD1E65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MortgageApplicationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kevo.MortgageApplicationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MortgageApplication.app/MortgageApplication";
+			};
+			name = Release;
+		};
+		52B611971DB7D38700BD1E65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MortgageApplicationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kevo.MortgageApplicationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MortgageApplication;
+			};
+			name = Debug;
+		};
+		52B611981DB7D38700BD1E65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MortgageApplicationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kevo.MortgageApplicationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MortgageApplication;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52B611631DB7D38700BD1E65 /* Build configuration list for PBXProject "MortgageApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B6118E1DB7D38700BD1E65 /* Debug */,
+				52B6118F1DB7D38700BD1E65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52B611901DB7D38700BD1E65 /* Build configuration list for PBXNativeTarget "MortgageApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B611911DB7D38700BD1E65 /* Debug */,
+				52B611921DB7D38700BD1E65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		52B611931DB7D38700BD1E65 /* Build configuration list for PBXNativeTarget "MortgageApplicationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B611941DB7D38700BD1E65 /* Debug */,
+				52B611951DB7D38700BD1E65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		52B611961DB7D38700BD1E65 /* Build configuration list for PBXNativeTarget "MortgageApplicationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B611971DB7D38700BD1E65 /* Debug */,
+				52B611981DB7D38700BD1E65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52B611601DB7D38700BD1E65 /* Project object */;
+}
