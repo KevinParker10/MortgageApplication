@@ -148,7 +148,6 @@ class PictureofMarketVC: UIViewController {
         
         else
         {
-            //Tester
             pricePerSqrFootLabel.text = ""
             closingCostLabel.text = ""
             agentFeeLabel.text = ""
