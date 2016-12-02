@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52185E051DC1051D00E26E15 /* PictureofMarketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52185E041DC1051D00E26E15 /* PictureofMarketVC.swift */; };
 		52B6116C1DB7D38700BD1E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */; };
-		52B6116E1DB7D38700BD1E65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6116D1DB7D38700BD1E65 /* ViewController.swift */; };
+		52B6116E1DB7D38700BD1E65 /* MonthlyPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVC.swift */; };
 		52B611711DB7D38700BD1E65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B6116F1DB7D38700BD1E65 /* Main.storyboard */; };
 		52B611731DB7D38700BD1E65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B611721DB7D38700BD1E65 /* Assets.xcassets */; };
 		52B611761DB7D38700BD1E65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B611741DB7D38700BD1E65 /* LaunchScreen.storyboard */; };
 		52B611811DB7D38700BD1E65 /* MortgageApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B611801DB7D38700BD1E65 /* MortgageApplicationTests.swift */; };
 		52B6118C1DB7D38700BD1E65 /* MortgageApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6118B1DB7D38700BD1E65 /* MortgageApplicationUITests.swift */; };
+		52B6119A1DB89B7F00BD1E65 /* TabTwoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B611991DB89B7F00BD1E65 /* TabTwoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52185E041DC1051D00E26E15 /* PictureofMarketVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureofMarketVC.swift; sourceTree = "<group>"; };
 		52B611681DB7D38700BD1E65 /* MortgageApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MortgageApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52B6116D1DB7D38700BD1E65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentVC.swift; sourceTree = "<group>"; };
 		52B611701DB7D38700BD1E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52B611721DB7D38700BD1E65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52B611751DB7D38700BD1E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		52B611871DB7D38700BD1E65 /* MortgageApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MortgageApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B6118B1DB7D38700BD1E65 /* MortgageApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageApplicationUITests.swift; sourceTree = "<group>"; };
 		52B6118D1DB7D38700BD1E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B611991DB89B7F00BD1E65 /* TabTwoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabTwoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */,
-				52B6116D1DB7D38700BD1E65 /* ViewController.swift */,
+				52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVC.swift */,
+				52185E041DC1051D00E26E15 /* PictureofMarketVC.swift */,
+				52B611991DB89B7F00BD1E65 /* TabTwoVC.swift */,
 				52B6116F1DB7D38700BD1E65 /* Main.storyboard */,
 				52B611721DB7D38700BD1E65 /* Assets.xcassets */,
 				52B611741DB7D38700BD1E65 /* LaunchScreen.storyboard */,
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52B6116E1DB7D38700BD1E65 /* ViewController.swift in Sources */,
+				52185E051DC1051D00E26E15 /* PictureofMarketVC.swift in Sources */,
+				52B6119A1DB89B7F00BD1E65 /* TabTwoVC.swift in Sources */,
+				52B6116E1DB7D38700BD1E65 /* MonthlyPaymentVC.swift in Sources */,
 				52B6116C1DB7D38700BD1E65 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +513,7 @@
 				52B611921DB7D38700BD1E65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52B611931DB7D38700BD1E65 /* Build configuration list for PBXNativeTarget "MortgageApplicationTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +522,7 @@
 				52B611951DB7D38700BD1E65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52B611961DB7D38700BD1E65 /* Build configuration list for PBXNativeTarget "MortgageApplicationUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +531,7 @@
 				52B611981DB7D38700BD1E65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
