@@ -120,7 +120,7 @@ class PictureofMarketVC: UIViewController {
     
     func displayAll()
     {
-    
+        //Change
         let tempCloseCost = ((Double(currentPriceValue)) * 0.03)
         let tempAgentFee = ((Double(currentPriceValue)) * 0.06)
         let tempNet = (Double(currentPriceValue) - tempCloseCost - tempAgentFee - (Double(currentRepairsValue)))
