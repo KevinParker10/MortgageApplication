@@ -148,14 +148,14 @@ class PictureofMarketVC: UIViewController {
         
         else
         {
-            pricePerSqrFootLabel.text = ""
-            closingCostLabel.text = ""
-            agentFeeLabel.text = ""
-            netLabel.text = ""
-            closingCost2Label.text = ""
-            holdingCostLabel.text = ""
-            profitLabel.text = ""
-            offerLabel.text = ""
+            pricePerSqrFootLabel.text = "Price/SqrFt = "
+            closingCostLabel.text = "Closing Cost = "
+            agentFeeLabel.text = "Agent Fee = "
+            netLabel.text = "Net Label = "
+            closingCost2Label.text = "Closing Cost = "
+            holdingCostLabel.text = "Holding Cost = "
+            profitLabel.text = "Profit Label = "
+            offerLabel.text = "Offer = "
         }
     }
 

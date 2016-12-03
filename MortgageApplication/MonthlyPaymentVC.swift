@@ -10,13 +10,7 @@ import UIKit
 
 class MonthlyPaymentVc: UIViewController {
 
-    @IBOutlet weak var interestField: UITextField!
-    @IBOutlet weak var lengthField: UITextField!
-    @IBOutlet weak var princAmountField: UITextField!
-    @IBOutlet weak var monthlyPaymentBtn: UIButton!
-    
-    @IBOutlet weak var monthlyPaymentLabel: UILabel!
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,30 +23,113 @@ class MonthlyPaymentVc: UIViewController {
     }
 
     
-    @IBAction func monthlyPaymentCalc(_ sender: AnyObject) {
-        var interest = Double(interestField.text!)
-        var months = 0.0
-        let lengthofMor = Double(lengthField.text!)
-        //Make this take Commas in the input
-        let principalAmnt = Double(princAmountField.text!)
-
-        if (interest != nil || lengthofMor != nil || principalAmnt != nil)
-        {
-            months = lengthofMor! * 12
-            interest = interest! / 100
+    @IBOutlet weak var mortgagePriceSlider: UISlider!
+    @IBOutlet weak var interestRateSlider: UISlider!
+    @IBOutlet weak var lengthofMortgageSlider: UISlider!
     
-            var monthlyPay = ((interest! * pow((1 + interest!),months)) / (pow((1 + interest!),months)-1))
-            monthlyPay = monthlyPay * principalAmnt!
+    @IBOutlet weak var monthlyPayLabel: UILabel!
+    
+    
+    @IBOutlet weak var mortgagePriceLabel: UILabel!
+    @IBOutlet weak var interestRateLabel: UILabel!
+    @IBOutlet weak var lengthLabel: UILabel!
+    
+    var currentPriceSlider = 0
+    var currentInterest = 0.0
+    var currentLength = 0
+    var priceValue = 0
+    var interestValue = 0.0
+    var lengthValue = 0
+    
+    
+    
+    @IBAction func PriceSliderAction(_ sender: UISlider) {
         
-            monthlyPaymentLabel.text = "\(monthlyPay)"
+        
+        priceValue = Int(mortgagePriceSlider.value)
+        
+        if (priceValue == 0)
+        {
+            priceValue = priceValue + 30000
         }
-        else{
-            monthlyPaymentLabel.text = "Invalid Entry"
+            
+        else if ((priceValue * 2500) + 30000 <= 100000)
+        {
+            priceValue = (priceValue * 2500) + 30000
+        }
+            
+        else
+        {
+            priceValue = (priceValue * 5000) + 30000
         }
         
+        mortgagePriceLabel.text = ("\(priceValue)")
+        
+        currentPriceSlider = priceValue
+        
+        monthlyPaymentCalc()
     }
     
     
+    @IBAction func interestRateSliderAction(_ sender: UISlider) {
+        
+        var interestValue = (interestRateSlider.value)
+        interestValue = interestValue/20
+        //let valueString = NSString(format:"%.2f", (String(value)))
+        interestValue = round(interestValue * 100)/100
+        
+        interestRateLabel.text = ("\(interestValue)")
+        
+        currentInterest = Double(interestValue)
+        
+        monthlyPaymentCalc()
+        
+    }
+    
+    @IBAction func lengthSliderAction(_ sender: UISlider) {
+        
+        var lengthValue = Int(lengthofMortgageSlider.value)
+        
+        lengthValue *= 5
+        
+        lengthLabel.text = ("\(lengthValue)")
+        
+        currentLength = lengthValue
+        
+        monthlyPaymentCalc()
+    }
+    
+    
+    
+    
+    
+        func monthlyPaymentCalc()
+        {
+            
+            
+        var interest = Double(currentInterest)
+        //var months = 0.0
+        let lengthofMor = Double(currentLength)
+        let principalAmnt = Double(currentPriceSlider)
+
+        if (interest != 0 || lengthofMor != 0 || principalAmnt != 0)
+        {
+            let months = lengthofMor * 12
+            interest = (interest / 100) / 12
+    
+            let numerator = (principalAmnt * (interest * pow((1+interest),lengthofMor)))
+            let denominator = (pow((1+interest),lengthofMor) - 1 )
+            
+            let monthlyPay = numerator/denominator
+            
+            //monthlyPay = round(monthlyPay * 100) / 100
+        
+            monthlyPayLabel.text = "\(monthlyPay)"
+        }
+        else{
+            monthlyPayLabel.text = "Invalid Entry"
+        }
+    }
 
 }
 
