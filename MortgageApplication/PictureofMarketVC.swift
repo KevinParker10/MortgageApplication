@@ -23,6 +23,10 @@ class PictureofMarketVC: UIViewController {
     @IBOutlet weak var repairsField: UITextField!
     @IBOutlet weak var calculateButton: UIButton!
     
+    //Decleration of outlets that are for description of values
+    
+    
+    
     //Outlets for the bottom display labels
     
     @IBOutlet weak var closingCostLabel: UILabel!
@@ -85,30 +89,30 @@ class PictureofMarketVC: UIViewController {
         if (currentPriceValue != 0 && currentRepairsValue != 0)
         {
             
-            closingCostLabel.text = ("Closing Cost = " + "\(tempCloseCost)")
+            closingCostLabel.text = ("\(tempCloseCost)")
             
-            agentFeeLabel.text = ("Agent Fee = " + "\(tempAgentFee)")
+            agentFeeLabel.text = ("\(tempAgentFee)")
             
-            netLabel.text = ("Net Value = " + "\(tempNet)")
+            netLabel.text = ("\(tempNet)")
             
-            closingCost2Label.text = ("Closing Cost = " + "\((Double(currentPriceValue)) * 0.03)")
+            closingCost2Label.text = ("\((Double(currentPriceValue)) * 0.03)")
             
-            holdingCostLabel.text = ("Holding Cost = " + "\(tempHoldingCost)")
+            holdingCostLabel.text = ("\(tempHoldingCost)")
             
-            profitLabel.text = ("Profit = " + "\(tempProfit)")
+            profitLabel.text = ("\(tempProfit)")
             
-            offerLabel.text = ("Offer = " + "\(tempOffer)")
+            offerLabel.text = ("\(tempOffer)")
         }
         
         else
         {
-            closingCostLabel.text = "Closing Cost = "
-            agentFeeLabel.text = "Agent Fee = "
-            netLabel.text = "Net Label = "
-            closingCost2Label.text = "Closing Cost = "
-            holdingCostLabel.text = "Holding Cost = "
-            profitLabel.text = "Profit Label = "
-            offerLabel.text = "Offer = "
+            closingCostLabel.text = ""
+            agentFeeLabel.text = ""
+            netLabel.text = ""
+            closingCost2Label.text = ""
+            holdingCostLabel.text = ""
+            profitLabel.text = ""
+            offerLabel.text = ""
         }
         offerBool = true
         //MonthlyPaymentVc().displayValues()

@@ -15,6 +15,11 @@ class MonthlyPaymentVc: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         offerField.text = passedOffer
+        downPaymentField.text = "20"
+        interestField.text = "5.5"
+        termField.text = "20"
+        
+        monthlyPaymentCalc()
         
     }
     
@@ -42,9 +47,6 @@ class MonthlyPaymentVc: UIViewController {
 
         func monthlyPaymentCalc()
         {
-            
-            offerField.text = (passedOffer)
-            
         var interest = Double(interestField.text!)
         //var months = 0.0
         let lengthofMor = Double(termField.text!)
