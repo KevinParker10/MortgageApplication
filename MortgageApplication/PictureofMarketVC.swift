@@ -15,11 +15,13 @@ class PictureofMarketVC: UIViewController {
     var currentPriceValue = 0
     var currentRepairsValue = 0
     var value = 0
+    var offerBool = false
     
     
     //Declerations of outlets
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var repairsField: UITextField!
+    @IBOutlet weak var calculateButton: UIButton!
     
     //Outlets for the bottom display labels
     
@@ -36,6 +38,7 @@ class PictureofMarketVC: UIViewController {
         super.viewDidLoad()        
         // Do any additional setup after loading the view.
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,9 +53,9 @@ class PictureofMarketVC: UIViewController {
         {
         currentPriceValue = Int(priceField.text!)!
         
-        displayAll()
-        }
         
+        }
+        displayAll()
     }
     
     @IBAction func repairsFieldAction(_ sender: Any) {
@@ -62,12 +65,10 @@ class PictureofMarketVC: UIViewController {
         
         currentRepairsValue = Int(repairsField.text!)!
         
-        displayAll()
+        //displayAll()
         }
+        displayAll()
     }
-    
-
-    
     
     //Function to Display the final amounts on the bottom labels
     
@@ -79,6 +80,7 @@ class PictureofMarketVC: UIViewController {
         let tempNet = (Double(currentPriceValue) - tempCloseCost - tempAgentFee - (Double(currentRepairsValue)))
         let tempHoldingCost = ((Double(currentPriceValue)) * 0.05)
         let tempProfit = ((Double(currentPriceValue)) * 0.15)
+        let tempOffer = (tempNet - tempCloseCost - tempHoldingCost - tempProfit)
         
         if (currentPriceValue != 0 && currentRepairsValue != 0)
         {
@@ -95,7 +97,7 @@ class PictureofMarketVC: UIViewController {
             
             profitLabel.text = ("Profit = " + "\(tempProfit)")
             
-            offerLabel.text = ("Offer = " + "\(tempNet - tempCloseCost - tempHoldingCost - tempProfit)")
+            offerLabel.text = ("Offer = " + "\(tempOffer)")
         }
         
         else
@@ -108,12 +110,21 @@ class PictureofMarketVC: UIViewController {
             profitLabel.text = "Profit Label = "
             offerLabel.text = "Offer = "
         }
+        offerBool = true
+        //MonthlyPaymentVc().displayValues()
     }
-
     
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destViewController : MonthlyPaymentVc = segue.destination as! MonthlyPaymentVc
+        
+        destViewController.passedOffer = offerLabel!.text
         
     }
-    
+        
+    }
+
     
 
 
