@@ -14,17 +14,23 @@ class MonthlyPaymentVc: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (Double(passedOffer) != nil)
+        {
         offerField.text = passedOffer
-        downPaymentField.text = "20"
+        downPaymentPer.text = "20"
         interestField.text = "5.5"
         termField.text = "20"
+        downPaymentField.text = (String(passedDownPayment))
         
         monthlyPaymentCalc()
+        }
         
     }
     
     //Receiveing the variables that are passed from the PictureOfMarketVC
     var passedOffer:String!
+    var passedDownPayment:Double!
 
 
     override func didReceiveMemoryWarning() {
@@ -38,21 +44,40 @@ class MonthlyPaymentVc: UIViewController {
     @IBOutlet weak var interestField: UITextField!
     @IBOutlet weak var termField: UITextField!
     @IBOutlet weak var annualPayLabel: UILabel!
+    @IBOutlet weak var downPaymentPer: UITextField!
     
-    func displayValues()
-    {
-        MonthlyPaymentVc().offerField.text = "Hello"
+    
+    
+    //Actions for if the text of the defaults is edited
+
+    @IBAction func offerAction(_ sender: Any) {
+        monthlyPaymentCalc()
     }
     
+    @IBAction func downPaymentAction(_ sender: Any) {
+        monthlyPaymentCalc()
+    }
+    
+    @IBAction func interestRateAction(_ sender: Any) {
+        monthlyPaymentCalc()
+    }
+    
+    @IBAction func termAction(_ sender: Any) {
+        monthlyPaymentCalc()
+    }
+    
+    
+
 
         func monthlyPaymentCalc()
         {
+            print("Got to the method")
         var interest = Double(interestField.text!)
-        //var months = 0.0
+        var downPaymentPercentage = Double(downPaymentPer.text!)
         let lengthofMor = Double(termField.text!)
         let principalAmnt = Double(offerField.text!)
 
-        if (interest != 0 || lengthofMor != 0 || principalAmnt != 0)
+        if (interest != 0.0 || lengthofMor != 0.0 || principalAmnt != 0.0)
         {
             //var months = lengthofMor! * 12
             interest = (interest! / 100) / 12
@@ -69,6 +94,13 @@ class MonthlyPaymentVc: UIViewController {
         else{
             annualPayLabel.text = "Invalid Entry"
         }
+        
+        if (downPaymentPercentage != 0)
+        {
+            downPaymentPercentage = downPaymentPercentage! / 100
+            let downpayment = principalAmnt! * downPaymentPercentage!
+            downPaymentField.text = ("\(downpayment)")
+            }
     }
 
 }

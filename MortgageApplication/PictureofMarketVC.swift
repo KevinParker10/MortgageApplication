@@ -16,6 +16,7 @@ class PictureofMarketVC: UIViewController {
     var currentRepairsValue = 0
     var value = 0
     var offerBool = false
+    var downpaymentToPass = 0.0
     
     
     //Declerations of outlets
@@ -85,6 +86,7 @@ class PictureofMarketVC: UIViewController {
         let tempHoldingCost = ((Double(currentPriceValue)) * 0.05)
         let tempProfit = ((Double(currentPriceValue)) * 0.15)
         let tempOffer = (tempNet - tempCloseCost - tempHoldingCost - tempProfit)
+        downpaymentToPass = tempOffer * 0.20
         
         if (currentPriceValue != 0 && currentRepairsValue != 0)
         {
@@ -124,6 +126,7 @@ class PictureofMarketVC: UIViewController {
         let destViewController : MonthlyPaymentVc = segue.destination as! MonthlyPaymentVc
         
         destViewController.passedOffer = offerLabel!.text
+        destViewController.passedDownPayment = downpaymentToPass
         
     }
         
