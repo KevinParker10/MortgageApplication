@@ -72,7 +72,7 @@ class PictureofMarketVC: UIViewController {
     }
     
     @IBAction func CalcBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "goToMonthlyPay", sender: self.value)
+        performSegue(withIdentifier: "goToMonthlyPay", sender: nil)
         
     }
 
