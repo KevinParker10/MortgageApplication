@@ -13,7 +13,7 @@ class MonthlyPaymentVc: UIViewController {
 
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()//change
         
         if (Double(passedOffer) != nil)
         {
