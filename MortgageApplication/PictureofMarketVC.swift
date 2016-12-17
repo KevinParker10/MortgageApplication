@@ -13,25 +13,24 @@ class PictureofMarketVC: UIViewController {
     //Decleration of variables used in this VC
     
     var currentPriceValue = 0
-    var currentSqrFootage = 0
     var currentRepairsValue = 0
     var value = 0
+    var offerBool = false
+    var downpaymentToPass = 0.0
     
     
     //Declerations of outlets
-    
     @IBOutlet weak var priceField: UITextField!
-    @IBOutlet weak var priceSlider: UISlider!
-    @IBOutlet weak var PriceLabel: UILabel!
-    @IBOutlet weak var sqrFootageSlider: UISlider!
-    @IBOutlet weak var sqrFootageLabel: UILabel!
-    @IBOutlet weak var repairsSlider: UISlider!
-    @IBOutlet weak var repairsLabel: UILabel!
+    @IBOutlet weak var repairsField: UITextField!
+    @IBOutlet weak var calculateButton: UIButton!
+    
+    //Decleration of outlets that are for description of values
+    
+    
     
     //Outlets for the bottom display labels
     
     @IBOutlet weak var closingCostLabel: UILabel!
-    @IBOutlet weak var pricePerSqrFootLabel: UILabel!
     @IBOutlet weak var agentFeeLabel: UILabel!
     @IBOutlet weak var netLabel: UILabel!
     @IBOutlet weak var closingCost2Label: UILabel!
@@ -44,125 +43,99 @@ class PictureofMarketVC: UIViewController {
         super.viewDidLoad()        
         // Do any additional setup after loading the view.
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //text field actions
     
-    
-    //Slider Actions
-    
-    @IBAction func priceSliderChanged(_ sender: UISlider) {
-        
-        var value = Int(priceSlider.value)
-        
-        if (value == 0)
+    @IBAction func priceEditingChanged(_ sender: Any) {
+        if (priceField.text! != "")
         {
-            value = value + 30000
+            currentPriceValue = Int(priceField.text!)!
+            
         }
-        
-        else if ((value * 2500) + 30000 <= 100000)
-        {
-            value = (value * 2500) + 30000
-        }
-        
-        else
-        {
-            value = (value * 5000) + 30000
-        }
-        
-        
-        PriceLabel.text = "\(value)"
-        currentPriceValue = value
-        
         displayAll()
-        
-        
     }
     
-    @IBAction func sqrFootageSliderChanged(_ sender: UISlider) {
-        
-        var value = Int(sqrFootageSlider.value)
-        
-        if (value * 100 <= 10000)
+    
+    @IBAction func repairsEditingChanged(_ sender: Any) {
+        if(repairsField.text! != "")
         {
-            value = value * 100
+            
+            currentRepairsValue = Int(repairsField.text!)!
         }
-        
-        
-        currentSqrFootage = value
-        sqrFootageLabel.text = "\(currentSqrFootage)"
-        
         displayAll()
-        
+    }
+    
+    @IBAction func CalcBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "goToMonthlyPay", sender: self.value)
         
     }
 
-    @IBAction func repairsSliderAction(_ sender: UISlider) {
-        
-        currentRepairsValue = Int(repairsSlider.value)
-        
-        if (currentRepairsValue * 1000 <= 100000)
-        {
-            currentRepairsValue = currentRepairsValue * 1000
-        }
-        
-        repairsLabel.text = "\(currentRepairsValue)"
-        
-        displayAll()
-        
-    }
+    
     
     
     //Function to Display the final amounts on the bottom labels
     
     func displayAll()
     {
-    
+        //Change
         let tempCloseCost = ((Double(currentPriceValue)) * 0.03)
         let tempAgentFee = ((Double(currentPriceValue)) * 0.06)
         let tempNet = (Double(currentPriceValue) - tempCloseCost - tempAgentFee - (Double(currentRepairsValue)))
-        let tempHoldingCost = (tempNet * 0.05)
-        let tempProfit = (tempNet * 0.15)
+        let tempHoldingCost = ((Double(currentPriceValue)) * 0.05)
+        let tempProfit = ((Double(currentPriceValue)) * 0.15)
+        let tempOffer = (tempNet - tempCloseCost - tempHoldingCost - tempProfit)
+        downpaymentToPass = tempOffer * 0.20
         
-        if (currentPriceValue != 30000 && currentSqrFootage != 0 && currentRepairsValue != 0)
+        if (priceField.hasText && repairsField.hasText)
         {
-            pricePerSqrFootLabel.text = ("Price/SqrFt = " + "\(currentPriceValue/currentSqrFootage)")
             
-            closingCostLabel.text = ("Closing Cost = " + "\(tempCloseCost)")
+            closingCostLabel.text = ("\(tempCloseCost)")
             
-            agentFeeLabel.text = ("Agent Fee = " + "\(tempAgentFee)")
+            agentFeeLabel.text = ("\(tempAgentFee)")
             
-            netLabel.text = ("Net Value = " + "\(tempNet)")
+            netLabel.text = ("\(tempNet)")
             
-            closingCost2Label.text = ("Closing Cost = " + "\(tempNet * 0.03)")
+            closingCost2Label.text = ("\((Double(currentPriceValue)) * 0.03)")
             
-            holdingCostLabel.text = ("Holding Cost = " + "\(tempHoldingCost)")
+            holdingCostLabel.text = ("\(tempHoldingCost)")
             
-            profitLabel.text = ("Profit = " + "\(tempProfit)")
+            profitLabel.text = ("\(tempProfit)")
             
-            offerLabel.text = ("Offer = " + "\(tempNet - tempCloseCost - tempHoldingCost - tempProfit)")
+            offerLabel.text = ("\(tempOffer)")
         }
         
         else
         {
-            pricePerSqrFootLabel.text = "Price/SqrFt = "
-            closingCostLabel.text = "Closing Cost = "
-            agentFeeLabel.text = "Agent Fee = "
-            netLabel.text = "Net Label = "
-            closingCost2Label.text = "Closing Cost = "
-            holdingCostLabel.text = "Holding Cost = "
-            profitLabel.text = "Profit Label = "
-            offerLabel.text = "Offer = "
+            closingCostLabel.text = ""
+            agentFeeLabel.text = ""
+            netLabel.text = ""
+            closingCost2Label.text = ""
+            holdingCostLabel.text = ""
+            profitLabel.text = ""
+            offerLabel.text = ""
         }
+        offerBool = true
+        //MonthlyPaymentVc().displayValues()
     }
-
     
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destViewController : MonthlyPaymentVc = segue.destination as! MonthlyPaymentVc
+        
+        destViewController.passedOffer = offerLabel!.text
+        destViewController.passedDownPayment = downpaymentToPass
         
     }
-    
+        
+    }
+
     
 
 

@@ -13,9 +13,27 @@ class MonthlyPaymentVc: UIViewController {
 
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        super.viewDidLoad()//change
+        
+        if (Double(passedOffer) != nil)
+        {
+        offerField.text = passedOffer
+        downPaymentPer.text = "20"
+        interestField.text = "5.5"
+        termField.text = "20"
+        downPaymentField.text = (String(passedDownPayment))
+        
+        monthlyPaymentCalc()
+        }
+        
     }
+    
+    
+    
+    //Receiveing the variables that are passed from the PictureOfMarketVC
+    var passedOffer:String!
+    var passedDownPayment:Double!
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -23,112 +41,85 @@ class MonthlyPaymentVc: UIViewController {
     }
 
     
-    @IBOutlet weak var mortgagePriceSlider: UISlider!
-    @IBOutlet weak var interestRateSlider: UISlider!
-    @IBOutlet weak var lengthofMortgageSlider: UISlider!
-    
-    @IBOutlet weak var monthlyPayLabel: UILabel!
-    
-    
-    @IBOutlet weak var mortgagePriceLabel: UILabel!
-    @IBOutlet weak var interestRateLabel: UILabel!
-    @IBOutlet weak var lengthLabel: UILabel!
-    
-    var currentPriceSlider = 0
-    var currentInterest = 0.0
-    var currentLength = 0
-    var priceValue = 0
-    var interestValue = 0.0
-    var lengthValue = 0
+    @IBOutlet weak var offerField: UITextField!
+    @IBOutlet weak var downPaymentField: UITextField!
+    @IBOutlet weak var interestField: UITextField!
+    @IBOutlet weak var termField: UITextField!
+    @IBOutlet weak var annualPayLabel: UILabel!
+    @IBOutlet weak var downPaymentPer: UITextField!
+    @IBOutlet weak var investBtn: UIButton!
     
     
     
-    @IBAction func PriceSliderAction(_ sender: UISlider) {
-        
-        
-        priceValue = Int(mortgagePriceSlider.value)
-        
-        if (priceValue == 0)
-        {
-            priceValue = priceValue + 30000
-        }
-            
-        else if ((priceValue * 2500) + 30000 <= 100000)
-        {
-            priceValue = (priceValue * 2500) + 30000
-        }
-            
-        else
-        {
-            priceValue = (priceValue * 5000) + 30000
-        }
-        
-        mortgagePriceLabel.text = ("\(priceValue)")
-        
-        currentPriceSlider = priceValue
-        
+    //Actions for if the text of the defaults is edited
+
+    @IBAction func offerAction(_ sender: Any) {
         monthlyPaymentCalc()
     }
     
-    
-    @IBAction func interestRateSliderAction(_ sender: UISlider) {
-        
-        var interestValue = (interestRateSlider.value)
-        interestValue = interestValue/20
-        //let valueString = NSString(format:"%.2f", (String(value)))
-        interestValue = round(interestValue * 100)/100
-        
-        interestRateLabel.text = ("\(interestValue)")
-        
-        currentInterest = Double(interestValue)
-        
+    @IBAction func downPaymentAction(_ sender: Any) {
         monthlyPaymentCalc()
-        
     }
     
-    @IBAction func lengthSliderAction(_ sender: UISlider) {
-        
-        var lengthValue = Int(lengthofMortgageSlider.value)
-        
-        lengthValue *= 5
-        
-        lengthLabel.text = ("\(lengthValue)")
-        
-        currentLength = lengthValue
-        
+    @IBAction func interestRateAction(_ sender: Any) {
+        monthlyPaymentCalc()
+    }
+    
+    @IBAction func termAction(_ sender: Any) {
         monthlyPaymentCalc()
     }
     
     
     
+    //Actions for the tab bar buttons
+    @IBAction func investBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "PictureofMarketVC", sender: nil)
+        dismiss(animated: true, completion: nil)
+    }
     
     
+
+
         func monthlyPaymentCalc()
         {
+        //print("Got to the method")
+        var interest = Double(interestField.text!)
+        var downPaymentPercentage = Double(downPaymentPer.text!)
+        var lengthofMor = Double(termField.text!)
+        var principalAmnt = Double(offerField.text!)
             
-            
-        var interest = Double(currentInterest)
-        //var months = 0.0
-        let lengthofMor = Double(currentLength)
-        let principalAmnt = Double(currentPriceSlider)
+            if (downPaymentPercentage != 0)
+            {
+                downPaymentPercentage = downPaymentPercentage! / 100
+                let downpayment = principalAmnt! * downPaymentPercentage!
+                downPaymentField.text = ("\(downpayment)")
+            }
 
-        if (interest != 0 || lengthofMor != 0 || principalAmnt != 0)
+        if (interestField.hasText && termField.hasText && offerField.hasText)
         {
-            let months = lengthofMor * 12
-            interest = (interest / 100) / 12
+            let closingCost = principalAmnt! * 0.03
+            let downpayment = principalAmnt! * downPaymentPercentage!
+            principalAmnt = principalAmnt! + closingCost - downpayment
+            lengthofMor! = lengthofMor! * 12
+            interest = (interest! / 100) / 12
     
-            let numerator = (principalAmnt * (interest * pow((1+interest),lengthofMor)))
-            let denominator = (pow((1+interest),lengthofMor) - 1 )
+            let numerator = (principalAmnt! * (interest! * pow((1+interest!),lengthofMor!)))
+            let denominator = (pow((1+interest!),lengthofMor!) - 1 )
             
-            let monthlyPay = numerator/denominator
+            var monthlyPay = numerator/denominator
+            monthlyPay = monthlyPay * 12
+            monthlyPay = Double(round(100 * monthlyPay)/100)
             
             //monthlyPay = round(monthlyPay * 100) / 100
         
-            monthlyPayLabel.text = "\(monthlyPay)"
+            annualPayLabel.text = "\(monthlyPay)"
         }
+            
         else{
-            monthlyPayLabel.text = "Invalid Entry"
+            annualPayLabel.text = "Invalid Entry"
         }
+        
+
     }
 
 }
