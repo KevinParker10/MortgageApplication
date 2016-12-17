@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52185E051DC1051D00E26E15 /* PictureofMarketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52185E041DC1051D00E26E15 /* PictureofMarketVC.swift */; };
+		5251942D1E052F78002981DF /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251942C1E052F78002981DF /* LoginVC.swift */; };
 		52B6116C1DB7D38700BD1E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */; };
 		52B6116E1DB7D38700BD1E65 /* MonthlyPaymentVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVc.swift */; };
 		52B611711DB7D38700BD1E65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B6116F1DB7D38700BD1E65 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		52185E041DC1051D00E26E15 /* PictureofMarketVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureofMarketVC.swift; sourceTree = "<group>"; };
+		5251942C1E052F78002981DF /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		52B611681DB7D38700BD1E65 /* MortgageApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MortgageApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentVc.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */,
 				52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVc.swift */,
 				52185E041DC1051D00E26E15 /* PictureofMarketVC.swift */,
+				5251942C1E052F78002981DF /* LoginVC.swift */,
 				52B6116F1DB7D38700BD1E65 /* Main.storyboard */,
 				52B611721DB7D38700BD1E65 /* Assets.xcassets */,
 				52B611741DB7D38700BD1E65 /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 			files = (
 				52185E051DC1051D00E26E15 /* PictureofMarketVC.swift in Sources */,
 				52B6116E1DB7D38700BD1E65 /* MonthlyPaymentVc.swift in Sources */,
+				5251942D1E052F78002981DF /* LoginVC.swift in Sources */,
 				52B6116C1DB7D38700BD1E65 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

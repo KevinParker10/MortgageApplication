@@ -73,8 +73,8 @@ class MonthlyPaymentVc: UIViewController {
     
     //Actions for the tab bar buttons
     @IBAction func investBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "PictureofMarketVC", sender: nil)
         dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "goToPictureofMarket", sender: nil)
     }
     
     
