@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		52185E051DC1051D00E26E15 /* PictureofMarketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52185E041DC1051D00E26E15 /* PictureofMarketVC.swift */; };
 		52B6116C1DB7D38700BD1E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */; };
-		52B6116E1DB7D38700BD1E65 /* MonthlyPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVC.swift */; };
+		52B6116E1DB7D38700BD1E65 /* MonthlyPaymentVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVc.swift */; };
 		52B611711DB7D38700BD1E65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B6116F1DB7D38700BD1E65 /* Main.storyboard */; };
 		52B611731DB7D38700BD1E65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B611721DB7D38700BD1E65 /* Assets.xcassets */; };
 		52B611761DB7D38700BD1E65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B611741DB7D38700BD1E65 /* LaunchScreen.storyboard */; };
@@ -38,7 +38,7 @@
 		52185E041DC1051D00E26E15 /* PictureofMarketVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureofMarketVC.swift; sourceTree = "<group>"; };
 		52B611681DB7D38700BD1E65 /* MortgageApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MortgageApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentVC.swift; sourceTree = "<group>"; };
+		52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentVc.swift; sourceTree = "<group>"; };
 		52B611701DB7D38700BD1E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52B611721DB7D38700BD1E65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52B611751DB7D38700BD1E65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */,
-				52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVC.swift */,
+				52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVc.swift */,
 				52185E041DC1051D00E26E15 /* PictureofMarketVC.swift */,
 				52B6116F1DB7D38700BD1E65 /* Main.storyboard */,
 				52B611721DB7D38700BD1E65 /* Assets.xcassets */,
@@ -263,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52185E051DC1051D00E26E15 /* PictureofMarketVC.swift in Sources */,
-				52B6116E1DB7D38700BD1E65 /* MonthlyPaymentVC.swift in Sources */,
+				52B6116E1DB7D38700BD1E65 /* MonthlyPaymentVc.swift in Sources */,
 				52B6116C1DB7D38700BD1E65 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

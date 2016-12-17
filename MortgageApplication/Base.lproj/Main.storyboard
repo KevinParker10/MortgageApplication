@@ -75,7 +75,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Calculate"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Gcm-AK-eMm"/>
+                                    <action selector="CalcBtnPressed:" destination="oGc-zw-fTW" eventType="touchUpInside" id="hnk-NP-R3W"/>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="goToMonthlyPay" id="OBr-IB-6ps"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdt-dE-z7s">
@@ -90,7 +91,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
-                                    <action selector="repairsFieldAction:" destination="oGc-zw-fTW" eventType="editingDidEnd" id="lJh-T9-T3a"/>
+                                    <action selector="repairsEditingChanged:" destination="oGc-zw-fTW" eventType="editingChanged" id="VCA-Fw-zaB"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aW-Ir-PmU">
@@ -107,7 +108,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
-                                    <action selector="priceFieldAction:" destination="oGc-zw-fTW" eventType="editingDidEnd" id="Tcc-sY-seU"/>
+                                    <action selector="priceEditingChanged:" destination="oGc-zw-fTW" eventType="editingChanged" id="I5s-0J-zO6"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Closing Cost =" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pr1-pv-MvK">
@@ -162,7 +163,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rhf-M7-XYg">
                                 <rect key="frame" x="25" y="20" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Offer"/>
+                                <state key="normal" title="Invest"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb4-2h-un2">
                                 <rect key="frame" x="25" y="45" width="51" height="28"/>
@@ -190,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubz-iZ-yM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1005" y="134.1549295774648"/>
+            <point key="canvasLocation" x="-1005" y="132"/>
         </scene>
         <!--Monthly Payment Vc-->
         <scene sceneID="tne-QT-ifu">
@@ -219,7 +220,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Invest"/>
                                 <connections>
-                                    <segue destination="oGc-zw-fTW" kind="show" id="flz-yo-Vma"/>
+                                    <action selector="investBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O2J-xN-CIO"/>
+                                    <segue destination="oGc-zw-fTW" kind="showDetail" identifier="goToPictureofMarket" id="35Y-HN-QHN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NU-sq-VDP">
@@ -327,13 +329,14 @@
                         <outlet property="downPaymentField" destination="TOC-nR-CO4" id="wDs-IZ-c1P"/>
                         <outlet property="downPaymentPer" destination="Hx8-0K-NLs" id="A86-oe-i5f"/>
                         <outlet property="interestField" destination="Bab-K5-IFs" id="DWr-Uh-D9F"/>
+                        <outlet property="investBtn" destination="fHd-4x-gLQ" id="8BK-xr-7X0"/>
                         <outlet property="offerField" destination="fYR-sB-m6A" id="P3h-b6-5gF"/>
                         <outlet property="termField" destination="mUC-1P-5Qj" id="sBY-oc-yDt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13.125" y="133.09859154929578"/>
+            <point key="canvasLocation" x="-13" y="134"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pSg-g7-dqg">

@@ -52,28 +52,32 @@ class PictureofMarketVC: UIViewController {
     
     //text field actions
     
-    @IBAction func priceFieldAction(_ sender: Any) {
-    
+    @IBAction func priceEditingChanged(_ sender: Any) {
         if (priceField.text! != "")
         {
-        currentPriceValue = Int(priceField.text!)!
-        
-        
+            currentPriceValue = Int(priceField.text!)!
+            
         }
         displayAll()
     }
     
-    @IBAction func repairsFieldAction(_ sender: Any) {
     
+    @IBAction func repairsEditingChanged(_ sender: Any) {
         if(repairsField.text! != "")
         {
-        
-        currentRepairsValue = Int(repairsField.text!)!
-        
-        //displayAll()
+            
+            currentRepairsValue = Int(repairsField.text!)!
         }
         displayAll()
     }
+    
+    @IBAction func CalcBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "goToMonthlyPay", sender: self.value)
+        
+    }
+
+    
+    
     
     //Function to Display the final amounts on the bottom labels
     
@@ -88,7 +92,7 @@ class PictureofMarketVC: UIViewController {
         let tempOffer = (tempNet - tempCloseCost - tempHoldingCost - tempProfit)
         downpaymentToPass = tempOffer * 0.20
         
-        if (currentPriceValue != 0 && currentRepairsValue != 0)
+        if (priceField.hasText && repairsField.hasText)
         {
             
             closingCostLabel.text = ("\(tempCloseCost)")
