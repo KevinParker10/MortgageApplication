@@ -396,16 +396,16 @@
             </objects>
             <point key="canvasLocation" x="-13" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Financial AnalVC-->
         <scene sceneID="pSg-g7-dqg">
             <objects>
-                <viewController id="41L-4X-Z8q" sceneMemberID="viewController">
+                <viewController id="41L-4X-Z8q" customClass="financialAnalVC" customModule="MortgageApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g2C-52-PDq"/>
                         <viewControllerLayoutGuide type="bottom" id="3lv-n3-F0D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pmb-v0-Naa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1450"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOD-oL-jm0">
@@ -427,9 +427,8 @@
                                 <gestureRecognizers/>
                                 <state key="normal" title="Finance"/>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRw-WB-xOe">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRw-WB-xOe">
                                 <rect key="frame" x="5" y="47" width="313" height="1397"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost and Revenue Assumptions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89Q-H6-Vyr">
                                         <rect key="frame" x="20" y="20" width="269" height="21"/>
@@ -582,9 +581,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="mQg-4X-GpF" appends="YES" id="4zI-LZ-xcW"/>
-                                        </connections>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Insurance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2T-wL-Ycx">
                                         <rect key="frame" x="20" y="631" width="60" height="21"/>
@@ -856,24 +852,27 @@
                                     </label>
                                 </subviews>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="41L-4X-Z8q" id="Uxa-aL-nNZ"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GRw-WB-xOe" firstAttribute="centerX" secondItem="pmb-v0-Naa" secondAttribute="centerX" constant="1.5" id="eFM-EB-6DV"/>
+                            <constraint firstItem="GRw-WB-xOe" firstAttribute="centerY" secondItem="pmb-v0-Naa" secondAttribute="centerY" constant="461.5" id="joF-h3-HO4"/>
+                        </constraints>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="1450"/>
+                    <connections>
+                        <outlet property="scrollViewer" destination="GRw-WB-xOe" id="Z4N-Rh-b3n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3h-yS-JNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" id="mQg-4X-GpF">
-                    <connections>
-                        <outlet property="delegate" destination="GRw-WB-xOe" id="NnW-yR-gEY"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="933.75" y="132.04225352112675"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="35Y-HN-QHN"/>
+        <segue reference="43u-rO-Mi2"/>
     </inferredMetricsTieBreakers>
 </document>
