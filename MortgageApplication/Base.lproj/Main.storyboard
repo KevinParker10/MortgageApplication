@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="41L-4X-Z8q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ge7-Sh-qet">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -397,10 +396,10 @@
             </objects>
             <point key="canvasLocation" x="-13" y="134"/>
         </scene>
-        <!--Financial AnalVC-->
+        <!--View Controller-->
         <scene sceneID="pSg-g7-dqg">
             <objects>
-                <viewController id="41L-4X-Z8q" customClass="financialAnalVC" customModule="MortgageApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="41L-4X-Z8q" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g2C-52-PDq"/>
                         <viewControllerLayoutGuide type="bottom" id="3lv-n3-F0D"/>
@@ -864,10 +863,10 @@
             </objects>
             <point key="canvasLocation" x="959" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Financial AnalVC-->
         <scene sceneID="kFd-9e-OOE">
             <objects>
-                <viewController id="ge7-Sh-qet" sceneMemberID="viewController">
+                <viewController id="ge7-Sh-qet" customClass="financialAnalVC" customModule="MortgageApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F8i-mN-34r"/>
                         <viewControllerLayoutGuide type="bottom" id="igl-1S-PVA"/>
@@ -876,14 +875,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h43-sc-eqR">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h43-sc-eqR">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Cost and Revenue Assumptions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dx7-qo-1OL">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost and Revenue Assumptions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dx7-qo-1OL">
                                         <rect key="frame" x="35" y="61" width="250" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="GIz-Pr-GMW"/>
-                                        </constraints>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -903,7 +901,7 @@
                                                 <rect key="frame" x="8" y="37" width="271" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="gSA-On-9zG"/>
@@ -941,7 +939,7 @@
                                                 <rect key="frame" x="8" y="211" width="271" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="j0u-Vf-sWS"/>
@@ -951,7 +949,7 @@
                                                 <rect key="frame" x="8" y="292" width="271" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Ghj-Sj-aqE"/>
@@ -982,7 +980,7 @@
                                                 <rect key="frame" x="8" y="375" width="271" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="j4Q-rD-D7s"/>
@@ -999,17 +997,16 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="dx7-qo-1OL" firstAttribute="leading" secondItem="h43-sc-eqR" secondAttribute="leadingMargin" constant="24" id="56D-aj-2XG"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="dx7-qo-1OL" secondAttribute="trailing" constant="56" id="gQp-rW-T73"/>
-                                    <constraint firstItem="dx7-qo-1OL" firstAttribute="top" secondItem="h43-sc-eqR" secondAttribute="topMargin" constant="78" id="pDg-vq-TAw"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1000"/>
+                    <connections>
+                        <outlet property="costAndRevenueView" destination="R0q-eF-VME" id="UAP-gv-YDb"/>
+                        <outlet property="scrollViewer" destination="h43-sc-eqR" id="692-HT-AbN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3n-Ad-2Fk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

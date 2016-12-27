@@ -10,14 +10,20 @@ import UIKit
 
 class financialAnalVC: UIViewController {
 
+
     @IBOutlet weak var scrollViewer: UIScrollView!
     
+    @IBOutlet weak var costAndRevenueView: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         scrollViewer.contentSize.height = 1397
+        if (costAndRevenueView.isHidden)
+        {
+            print("is hidding")
+        }
     }
 
     override func didReceiveMemoryWarning() {
