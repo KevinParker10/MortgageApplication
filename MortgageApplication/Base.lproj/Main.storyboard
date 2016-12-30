@@ -962,6 +962,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="numOfUnitsAction:" destination="ge7-Sh-qet" eventType="editingChanged" id="ORx-YO-bEz"/>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Ghj-Sj-aqE"/>
                                                 </connections>
                                             </textField>
@@ -993,6 +994,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="avgMonthlyRentAction:" destination="ge7-Sh-qet" eventType="editingChanged" id="YMq-sL-52U"/>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="j4Q-rD-D7s"/>
                                                 </connections>
                                             </textField>
@@ -1169,6 +1171,7 @@
                         <outlet property="repairsField" destination="6Sq-eS-KHn" id="fqs-VL-zff"/>
                         <outlet property="scrollViewer" destination="h43-sc-eqR" id="692-HT-AbN"/>
                         <outlet property="totalLabel" destination="dDw-Pe-olv" id="mGl-NU-3be"/>
+                        <outlet property="vacRentLossLabel" destination="UOX-PE-5mb" id="HA8-tW-ilQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3n-Ad-2Fk" userLabel="First Responder" sceneMemberID="firstResponder"/>

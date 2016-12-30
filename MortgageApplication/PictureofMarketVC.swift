@@ -132,7 +132,14 @@ class PictureofMarketVC: UIViewController {
         destViewController.passedOffer = offerLabel!.text
         destViewController.passedDownPayment = downpaymentToPass
         
+        
+        let destViewController2 : financialAnalVC = segue.destination as! financialAnalVC
+        
+        destViewController2.passedRepairs = currentRepairsValue
+        
     }
+    
+
         
     }
 

@@ -10,6 +10,9 @@ import UIKit
 
 class financialAnalVC: UIViewController {
 
+    //Values Passed from other view controllers:
+    
+    var passedRepairs:Int!
 
     @IBOutlet weak var scrollViewer: UIScrollView!
     @IBOutlet weak var costAndRevenueView: UIView!
@@ -30,10 +33,16 @@ class financialAnalVC: UIViewController {
     @IBOutlet weak var grossMonthRevLabel: UILabel!
     @IBOutlet weak var vacRentLossLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if (passedRepairs != nil)
+        {
+            repairsField.text = ("\(passedRepairs)")
+        }
+        else{
+            repairsField.text = "20000"
+        }
         
         //Setting the scroll views content size to the actual size of the content that needs to be "scrollable"
         scrollViewer.contentSize.height = 2000
@@ -50,6 +59,14 @@ class financialAnalVC: UIViewController {
     @IBAction func contractPriceAction(_ sender: Any) {
         costAndRevenueAssumptions()
     }
+    
+    @IBAction func numOfUnitsAction(_ sender: Any) {
+        NumberofUnits()
+    }
+    
+    @IBAction func avgMonthlyRentAction(_ sender: Any) {
+        NumberofUnits()
+    }
 
 
     
@@ -57,10 +74,12 @@ class financialAnalVC: UIViewController {
     {
         if (contractedPriceField.text != "")
         {
-        let contractedPrice = (Double(contractedPriceField.text!))
-        let downPayment = Int(contractedPrice! * 0.20)
-        let ClosingCost = Int(contractedPrice! * 0.03)
-        let total = ((contractedPrice) + ClosingCost - downPayment)
+        let contractedPrice = ((contractedPriceField.text!))
+        let downPayment = (Int((Double(contractedPrice)! * 0.20)))
+        let ClosingCost = (Int((Double(contractedPrice)! * 0.03)))
+            let downPaymentInt = Int(downPayment)
+            let ClosingCostInt = Int(ClosingCost)
+        let total = ((Int(contractedPrice))! + ClosingCostInt - downPaymentInt)
     
         
             dwnPaymentLabel.text = ("\(downPayment)")
@@ -68,12 +87,27 @@ class financialAnalVC: UIViewController {
             totalLabel.text = ("\(total)")
         
         
+        
         }
-        
-        
-        
-        
-        
+    }
+    
+    
+    func NumberofUnits()
+    {
+        if (numOfUnitsField.text != "" && avgMonthRentField.text != "")
+        {
+            let numberOfUnits = (Double(numOfUnitsField.text!))
+            let avgMonthlyRent = (Double(avgMonthRentField.text!))
+            
+            var grsMonthRevenue = numberOfUnits! * avgMonthlyRent!
+                grsMonthRevenue *= 12
+            let vacRentLoss = ((grsMonthRevenue * 0.10))
+                var vacRentLossInt = Int(vacRentLoss)
+                    vacRentLossInt *= 12
+            
+            vacRentLossLabel.text = ("\(vacRentLossInt)")
+            grossMonthRevLabel.text = ("\(grsMonthRevenue)")
+        }
     }
     
     
