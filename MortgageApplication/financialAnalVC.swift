@@ -153,23 +153,25 @@ class financialAnalVC: UIViewController {
         if (repairsAndMaintField.text != "" && taxesField.text != "" && insuranceField.text != "" && utilField.text != "" && trashField.text != "")
         {
             let repairsAndMaint = Int(repairsAndMaintField.text!)
-            let taxes = taxesField.text
-            let insurance = insuranceField.text
+            let taxes = Int(taxesField.text!)
+            let insurance = Int(insuranceField.text!)
             let trashRemoval = Int(trashField.text!)
+            let utilities = Int(utilField.text!)
             
+            var propManagInt = 0
                 if (rentAfterVacancyLabel.text != "")
                 {
                     var propManag = (Double(rentAfterVacancyLabel.text!))
                 
                     propManag = (propManag! * 0.10)
-                    let propManagInt = Int(propManag!)
+                    propManagInt = Int(propManag!)
                     
                     propertyManagLabel.text = ("\(propManagInt)")
                 }
-            let total = repairsAndMaint! - trashRemoval!
+
+            let total = (repairsAndMaint! + taxes! + insurance! + propManagInt + trashRemoval! + utilities!)
             
             totalLabel2.text = ("\(total)")
-            
         }
         
         
