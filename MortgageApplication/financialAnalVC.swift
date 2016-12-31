@@ -16,22 +16,38 @@ class financialAnalVC: UIViewController {
 
     @IBOutlet weak var scrollViewer: UIScrollView!
     @IBOutlet weak var costAndRevenueView: UIView!
+    @IBOutlet weak var OperatingExpensesView: UIView!
     
     
-    //Declerations for the Cost and Revenue Assumptions View
+    //Declerations for all views
     
-        //Text Fields (User Inputs)
+    //Cost and Revenue View Text Fields
     @IBOutlet weak var contractedPriceField: UITextField!
     @IBOutlet weak var repairsField: UITextField!
     @IBOutlet weak var numOfUnitsField: UITextField!
     @IBOutlet weak var avgMonthRentField: UITextField!
     
-        //Lables (Displaying text via calculations)
+    
+    //Cost and Revenue View Labels
     @IBOutlet weak var dwnPaymentLabel: UILabel!
     @IBOutlet weak var closeCostLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var grossMonthRevLabel: UILabel!
     @IBOutlet weak var vacRentLossLabel: UILabel!
+    @IBOutlet weak var rentAfterVacancyLabel: UILabel!
+    
+    //SecondView Text Fields
+    @IBOutlet weak var repairsAndMaintField: UITextField!
+    @IBOutlet weak var taxesField: UITextField!
+    @IBOutlet weak var insuranceField: UITextField!
+    @IBOutlet weak var utilField: UITextField!
+    @IBOutlet weak var trashField: UITextField!
+    
+    //Second View Labels
+    @IBOutlet weak var propertyManagLabel: UILabel!
+    @IBOutlet weak var totalLabel2: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +84,27 @@ class financialAnalVC: UIViewController {
         NumberofUnits()
     }
 
+    @IBAction func repairsAction(_ sender: Any) {
+        OperatingExpenses()
+    }
 
+    @IBAction func taxesAction(_ sender: Any) {
+        OperatingExpenses()
+    }
+    
+    @IBAction func insuranceAction(_ sender: Any) {
+        OperatingExpenses()
+    }
+    
+    @IBAction func UtilitiesAction(_ sender: Any) {
+        OperatingExpenses()
+    }
+    
+    @IBAction func trashAction(_ sender: Any) {
+        OperatingExpenses()
+    }
+    
+    
     
     func costAndRevenueAssumptions()
     {
@@ -80,7 +116,6 @@ class financialAnalVC: UIViewController {
             let downPaymentInt = Int(downPayment)
             let ClosingCostInt = Int(ClosingCost)
         let total = ((Int(contractedPrice))! + ClosingCostInt - downPaymentInt)
-    
         
             dwnPaymentLabel.text = ("\(downPayment)")
             closeCostLabel.text = ("\(ClosingCost)")
@@ -99,18 +134,46 @@ class financialAnalVC: UIViewController {
             let numberOfUnits = (Double(numOfUnitsField.text!))
             let avgMonthlyRent = (Double(avgMonthRentField.text!))
             
-            var grsMonthRevenue = numberOfUnits! * avgMonthlyRent!
-                grsMonthRevenue *= 12
+            let grsMonthRevenue = numberOfUnits! * avgMonthlyRent!
+                let grsMonthRevenueInt = Int(grsMonthRevenue)
+                let grsMonthRevenueAnnual = grsMonthRevenueInt * 12
             let vacRentLoss = ((grsMonthRevenue * 0.10))
                 var vacRentLossInt = Int(vacRentLoss)
                     vacRentLossInt *= 12
+            let rentAfterVac = grsMonthRevenueAnnual - vacRentLossInt
             
             vacRentLossLabel.text = ("\(vacRentLossInt)")
-            grossMonthRevLabel.text = ("\(grsMonthRevenue)")
+            grossMonthRevLabel.text = ("\(grsMonthRevenueAnnual)")
+            rentAfterVacancyLabel.text = ("\(rentAfterVac)")
         }
     }
     
-    
+    func OperatingExpenses()
+    {
+        if (repairsAndMaintField.text != "" && taxesField.text != "" && insuranceField.text != "" && utilField.text != "" && trashField.text != "")
+        {
+            let repairsAndMaint = Int(repairsAndMaintField.text!)
+            let taxes = taxesField.text
+            let insurance = insuranceField.text
+            let trashRemoval = Int(trashField.text!)
+            
+                if (rentAfterVacancyLabel.text != "")
+                {
+                    var propManag = (Double(rentAfterVacancyLabel.text!))
+                
+                    propManag = (propManag! * 0.10)
+                    let propManagInt = Int(propManag!)
+                    
+                    propertyManagLabel.text = ("\(propManagInt)")
+                }
+            let total = repairsAndMaint! - trashRemoval!
+            
+            totalLabel2.text = ("\(total)")
+            
+        }
+        
+        
+    }
     
     
     
