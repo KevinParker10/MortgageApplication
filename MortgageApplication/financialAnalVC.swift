@@ -13,6 +13,8 @@ class financialAnalVC: UIViewController {
     //Values Passed from other view controllers:
     
     var passedRepairS:Int!
+    var passedInterest:Double!
+    var passedTerm:Double!
 
     //Tab Buttons
     @IBAction func calcBtnPressed(_ sender: Any) {
@@ -49,6 +51,11 @@ class financialAnalVC: UIViewController {
     @IBOutlet weak var vacRentLossLabel: UILabel!
     @IBOutlet weak var rentAfterVacancyLabel: UILabel!
     
+    //Interest Rate Labels
+    @IBOutlet weak var interestTextField: UITextField!
+    @IBOutlet weak var termLabel: UILabel!
+    @IBOutlet weak var paymentLabel: UILabel!
+    
     //SecondView Text Fields
     @IBOutlet weak var repairsAndMaintField: UITextField!
     @IBOutlet weak var taxesField: UITextField!
@@ -81,8 +88,11 @@ class financialAnalVC: UIViewController {
             repairsField.text = "20000"
         }
         
+        interestTextField.text = ("\(passedInterest!)")
+        termLabel.text = ("\(passedTerm!)")
+        
         //Setting the scroll views content size to the actual size of the content that needs to be "scrollable"
-        scrollViewer.contentSize.height = 2500
+        scrollViewer.contentSize.height = 2650
     }
 
     override func didReceiveMemoryWarning() {

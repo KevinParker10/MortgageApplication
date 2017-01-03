@@ -9,7 +9,8 @@
 import UIKit
 
 class MonthlyPaymentVc: UIViewController {
-
+    
+var canPerform = false
 
     
     override func viewDidLoad() {
@@ -33,7 +34,9 @@ class MonthlyPaymentVc: UIViewController {
     //Receiveing the variables that are passed from the PictureOfMarketVC
     var passedOffer:String!
     var passedDownPayment:Double!
-
+    var passedRepairs:Int!
+    var passingInterst = 5.5
+    var passingTerm = 20.0
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -48,6 +51,7 @@ class MonthlyPaymentVc: UIViewController {
     @IBOutlet weak var annualPayLabel: UILabel!
     @IBOutlet weak var downPaymentPer: UITextField!
     @IBOutlet weak var investBtn: UIButton!
+    @IBOutlet weak var financeBtn: UIButton!
     
     
     
@@ -72,11 +76,15 @@ class MonthlyPaymentVc: UIViewController {
     
     
     //Actions for the tab bar buttons
+    
     @IBAction func investBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "goToPictureofMarket", sender: nil)
     }
     
+    @IBAction func financeBtnPressed(_ sender: Any) {
+        canPerform = true
+        performSegue(withIdentifier: "monthToFinance", sender: nil)
+    }
     
 
 
@@ -87,6 +95,8 @@ class MonthlyPaymentVc: UIViewController {
         var downPaymentPercentage = Double(downPaymentPer.text!)
         var lengthofMor = Double(termField.text!)
         var principalAmnt = Double(offerField.text!)
+            
+            passingTerm = lengthofMor!
             
             if (downPaymentPercentage != 0)
             {
@@ -121,6 +131,22 @@ class MonthlyPaymentVc: UIViewController {
         
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (canPerform)
+        {
+            let destViewController2 : financialAnalVC = segue.destination as! financialAnalVC
+        destViewController2.passedRepairS = passedRepairs
+        destViewController2.passedInterest = passingInterst
+        destViewController2.passedTerm = passingTerm
+        }
+    }
+    
+    
+    
+    
+    
+    
 
 }
 
