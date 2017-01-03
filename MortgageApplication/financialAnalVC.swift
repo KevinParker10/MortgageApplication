@@ -12,11 +12,24 @@ class financialAnalVC: UIViewController {
 
     //Values Passed from other view controllers:
     
-    var passedRepairs:Int!
+    var passedRepairS:Int!
 
+    //Tab Buttons
+    @IBAction func calcBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func investBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "financeToPicture", sender: nil)
+    }
+    
+    
+    
+        //All views in the view controller:
     @IBOutlet weak var scrollViewer: UIScrollView!
     @IBOutlet weak var costAndRevenueView: UIView!
     @IBOutlet weak var OperatingExpensesView: UIView!
+    @IBOutlet weak var financialAssumptionsView: UIView!
     
     
     //Declerations for all views
@@ -47,21 +60,29 @@ class financialAnalVC: UIViewController {
     @IBOutlet weak var propertyManagLabel: UILabel!
     @IBOutlet weak var totalLabel2: UILabel!
     
+    //Third View Labels
+    @IBOutlet weak var capRateLabel: UILabel!
+    @IBOutlet weak var debtServLabel: UILabel!
+    @IBOutlet weak var cashFlowLabel: UILabel!
+    @IBOutlet weak var roiLabel: UILabel!
+    @IBOutlet weak var noiLabel: UILabel!
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (passedRepairs != nil)
+        if (passedRepairS != nil)
         {
-            repairsField.text = ("\(passedRepairs)")
+            repairsField.text = ("\(passedRepairS!)")
         }
         else{
             repairsField.text = "20000"
         }
         
         //Setting the scroll views content size to the actual size of the content that needs to be "scrollable"
-        scrollViewer.contentSize.height = 2000
+        scrollViewer.contentSize.height = 2500
     }
 
     override func didReceiveMemoryWarning() {
@@ -118,7 +139,7 @@ class financialAnalVC: UIViewController {
         let total = ((Int(contractedPrice))! + ClosingCostInt - downPaymentInt)
         
             dwnPaymentLabel.text = ("\(downPayment)")
-            closeCostLabel.text = ("\(ClosingCost)")
+            closeCostLabel.text = ("\(ClosingCostInt)")
             totalLabel.text = ("\(total)")
         
         
@@ -141,10 +162,11 @@ class financialAnalVC: UIViewController {
                 var vacRentLossInt = Int(vacRentLoss)
                     vacRentLossInt *= 12
             let rentAfterVac = grsMonthRevenueAnnual - vacRentLossInt
+                let rentAfterVacInt = Int(rentAfterVac)
             
             vacRentLossLabel.text = ("\(vacRentLossInt)")
             grossMonthRevLabel.text = ("\(grsMonthRevenueAnnual)")
-            rentAfterVacancyLabel.text = ("\(rentAfterVac)")
+            rentAfterVacancyLabel.text = ("\(rentAfterVacInt)")
         }
     }
     
@@ -172,8 +194,44 @@ class financialAnalVC: UIViewController {
             let total = (repairsAndMaint! + taxes! + insurance! + propManagInt + trashRemoval! + utilities!)
             
             totalLabel2.text = ("\(total)")
+            
+            
+            
         }
         
+        
+        if (totalLabel2.text != "")
+        {
+            FinancialAssumptions()
+        }
+        
+        
+    }
+    
+    func FinancialAssumptions()
+    {
+
+        if (rentAfterVacancyLabel.text != "")
+        {
+            print ("Hello")
+            let rentAfterVac = Int(rentAfterVacancyLabel.text!)
+            let total1 = Int(totalLabel.text!)
+            var noi = 0
+            
+            if (totalLabel2.text != "")
+            {
+            let total = Int(totalLabel2.text!)
+            noi = rentAfterVac! - total!
+            noiLabel.text = ("\(noi)")
+            }
+            
+            
+            if (noiLabel.text != "" && closeCostLabel.text != "")
+            {
+            let capRate = noi/total1!
+            capRateLabel.text = ("\(capRate)")
+            }
+        }
         
     }
     
