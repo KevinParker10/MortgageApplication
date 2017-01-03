@@ -12,7 +12,6 @@ class MonthlyPaymentVc: UIViewController {
     
 var canPerform = false
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()//change
         
@@ -37,6 +36,10 @@ var canPerform = false
     var passedRepairs:Int!
     var passingInterst = 5.5
     var passingTerm = 20.0
+    
+    
+    //Variables from settings that need to be declared
+    var closingCostPercentage = 0.03
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -107,7 +110,7 @@ var canPerform = false
 
         if (interestField.hasText && termField.hasText && offerField.hasText)
         {
-            let closingCost = principalAmnt! * 0.03
+            let closingCost = principalAmnt! * closingCostPercentage
             let downpayment = principalAmnt! * downPaymentPercentage!
             principalAmnt = principalAmnt! + closingCost - downpayment
             lengthofMor! = lengthofMor! * 12
