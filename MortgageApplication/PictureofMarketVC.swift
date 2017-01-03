@@ -10,6 +10,24 @@ import UIKit
 
 class PictureofMarketVC: UIViewController {
     
+    
+    
+    //Try Catch blocks to try to grab the values from the settings tab, if catch occurs, it sets the defaults that are also set in the settiongs view controller
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //Decleration of variables used in this VC
     
     var currentPriceValue = 0
