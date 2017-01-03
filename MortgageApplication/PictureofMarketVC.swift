@@ -23,6 +23,7 @@ class PictureofMarketVC: UIViewController {
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var repairsField: UITextField!
     @IBOutlet weak var calculateButton: UIButton!
+    @IBOutlet weak var financeBtn: UIButton!
     
     //Decleration of outlets that are for description of values
     
@@ -73,8 +74,12 @@ class PictureofMarketVC: UIViewController {
     
     @IBAction func CalcBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "goToMonthlyPay", sender: nil)
-        
     }
+    
+    @IBAction func financeBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "pictureToFinance", sender: nil)
+    }
+    
 
     
     
@@ -131,8 +136,12 @@ class PictureofMarketVC: UIViewController {
         
         destViewController.passedOffer = offerLabel!.text
         destViewController.passedDownPayment = downpaymentToPass
+        destViewController.passedRepairs = currentRepairsValue
+        
         
     }
+    
+
         
     }
 

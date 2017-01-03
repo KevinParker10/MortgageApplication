@@ -16,6 +16,7 @@
 		52B611761DB7D38700BD1E65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B611741DB7D38700BD1E65 /* LaunchScreen.storyboard */; };
 		52B611811DB7D38700BD1E65 /* MortgageApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B611801DB7D38700BD1E65 /* MortgageApplicationTests.swift */; };
 		52B6118C1DB7D38700BD1E65 /* MortgageApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6118B1DB7D38700BD1E65 /* MortgageApplicationUITests.swift */; };
+		52C5C8471E07C80200BA15A3 /* financialAnalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5C8461E07C80200BA15A3 /* financialAnalVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		52B611871DB7D38700BD1E65 /* MortgageApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MortgageApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B6118B1DB7D38700BD1E65 /* MortgageApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageApplicationUITests.swift; sourceTree = "<group>"; };
 		52B6118D1DB7D38700BD1E65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52C5C8461E07C80200BA15A3 /* financialAnalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = financialAnalVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */,
-				52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVc.swift */,
-				52185E041DC1051D00E26E15 /* PictureofMarketVC.swift */,
 				5251942C1E052F78002981DF /* LoginVC.swift */,
+				52185E041DC1051D00E26E15 /* PictureofMarketVC.swift */,
+				52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVc.swift */,
+				52C5C8461E07C80200BA15A3 /* financialAnalVC.swift */,
 				52B6116F1DB7D38700BD1E65 /* Main.storyboard */,
 				52B611721DB7D38700BD1E65 /* Assets.xcassets */,
 				52B611741DB7D38700BD1E65 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C5C8471E07C80200BA15A3 /* financialAnalVC.swift in Sources */,
 				52185E051DC1051D00E26E15 /* PictureofMarketVC.swift in Sources */,
 				52B6116E1DB7D38700BD1E65 /* MonthlyPaymentVc.swift in Sources */,
 				5251942D1E052F78002981DF /* LoginVC.swift in Sources */,
