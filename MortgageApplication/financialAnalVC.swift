@@ -88,8 +88,21 @@ class financialAnalVC: UIViewController {
             repairsField.text = "20000"
         }
         
+        if (passedInterest != nil)
+        {
         interestTextField.text = ("\(passedInterest!)")
+        }
+        else {
+            interestTextField.text = "5.5"
+        }
+        
+        if (passedTerm != nil)
+        {
         termLabel.text = ("\(passedTerm!)")
+        }
+        else{
+            termLabel.text = "20"
+        }
         
         //Setting the scroll views content size to the actual size of the content that needs to be "scrollable"
         scrollViewer.contentSize.height = 2650

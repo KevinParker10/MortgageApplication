@@ -35,6 +35,7 @@ class PictureofMarketVC: UIViewController {
     var value = 0
     var offerBool = false
     var downpaymentToPass = 0.0
+    var canGoToMonthly = false
     
     
     //Declerations of outlets
@@ -91,11 +92,14 @@ class PictureofMarketVC: UIViewController {
     }
     
     @IBAction func CalcBtnPressed(_ sender: Any) {
+        canGoToMonthly = true
+        dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "goToMonthlyPay", sender: nil)
     }
     
     @IBAction func financeBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "pictureToFinance", sender: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 
@@ -150,12 +154,14 @@ class PictureofMarketVC: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (canGoToMonthly)
+        {
         let destViewController : MonthlyPaymentVc = segue.destination as! MonthlyPaymentVc
         
         destViewController.passedOffer = offerLabel!.text
         destViewController.passedDownPayment = downpaymentToPass
         destViewController.passedRepairs = currentRepairsValue
-        
+        }
         
     }
     
