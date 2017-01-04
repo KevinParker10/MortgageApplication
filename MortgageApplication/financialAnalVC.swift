@@ -15,6 +15,8 @@ class financialAnalVC: UIViewController {
     var passedRepairS:Int!
     var passedInterest:Double!
     var passedTerm:Double!
+    
+    var goingToSettings = false
 
     //Tab Buttons
     @IBAction func calcBtnPressed(_ sender: Any) {
@@ -23,6 +25,12 @@ class financialAnalVC: UIViewController {
     
     @IBAction func investBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "financeToPicture", sender: nil)
+    }
+    
+    //Settings Button
+    @IBAction func settingsBtnPressed(_ sender: Any) {
+        goingToSettings = true
+        performSegue(withIdentifier: "financeToSettings", sender: nil)
     }
     
     
@@ -34,7 +42,7 @@ class financialAnalVC: UIViewController {
     @IBOutlet weak var financialAssumptionsView: UIView!
     
     
-    //Declerations for all views
+        //Declerations for all views
     
     //Cost and Revenue View Text Fields
     @IBOutlet weak var contractedPriceField: UITextField!
@@ -264,14 +272,21 @@ class financialAnalVC: UIViewController {
     
     
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if (goingToSettings)
+        {
+            let destViewController : SettingsVC = segue.destination as!SettingsVC
+            
+            destViewController.fromFinance = true
+            
+        }
+        
     }
-    */
+
 
 }

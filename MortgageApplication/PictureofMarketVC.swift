@@ -14,12 +14,10 @@ class PictureofMarketVC: UIViewController {
     
     //Try Catch blocks to try to grab the values from the settings tab, if catch occurs, it sets the defaults that are also set in the settiongs view controller
     
-    
-    
-    
-    
-    
-    
+    var preCloseCost = 0.03
+    var preAgentFee = 0.06
+    var preHoldCost = 0.05
+    var preProfit = 0.15
     
     
     
@@ -36,6 +34,7 @@ class PictureofMarketVC: UIViewController {
     var offerBool = false
     var downpaymentToPass = 0.0
     var canGoToMonthly = false
+    var goingToSettings = false
     
     
     //Declerations of outlets
@@ -44,9 +43,8 @@ class PictureofMarketVC: UIViewController {
     @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet weak var financeBtn: UIButton!
     
-    //Decleration of outlets that are for description of values
     
-    
+        //Decleration of outlets that are for description of values
     
     //Outlets for the bottom display labels
     
@@ -102,6 +100,13 @@ class PictureofMarketVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    //Settings Button
+    @IBAction func SettingsBtn(_ sender: Any) {
+        goingToSettings = true
+        performSegue(withIdentifier: "pictureToSettings", sender: nil)
+    }
+    
 
     
     
@@ -111,11 +116,11 @@ class PictureofMarketVC: UIViewController {
     func displayAll()
     {
         //Change
-        let tempCloseCost = ((Double(currentPriceValue)) * 0.03)
-        let tempAgentFee = ((Double(currentPriceValue)) * 0.06)
+        let tempCloseCost = ((Double(currentPriceValue)) * preCloseCost)
+        let tempAgentFee = ((Double(currentPriceValue)) * preAgentFee)
         let tempNet = (Double(currentPriceValue) - tempCloseCost - tempAgentFee - (Double(currentRepairsValue)))
-        let tempHoldingCost = ((Double(currentPriceValue)) * 0.05)
-        let tempProfit = ((Double(currentPriceValue)) * 0.15)
+        let tempHoldingCost = ((Double(currentPriceValue)) * preHoldCost)
+        let tempProfit = ((Double(currentPriceValue)) * preProfit)
         let tempOffer = (tempNet - tempCloseCost - tempHoldingCost - tempProfit)
         downpaymentToPass = tempOffer * 0.20
         
@@ -161,6 +166,15 @@ class PictureofMarketVC: UIViewController {
         destViewController.passedOffer = offerLabel!.text
         destViewController.passedDownPayment = downpaymentToPass
         destViewController.passedRepairs = currentRepairsValue
+        }
+        
+        if (goingToSettings)
+        {
+            let destViewController2 : SettingsVC = segue.destination as! SettingsVC
+            
+            destViewController2.fromPicture = true
+            
+            print (preCloseCost)
         }
         
     }

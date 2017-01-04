@@ -82,10 +82,12 @@ var canPerform = false
     
     @IBAction func investBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "goToPictureofMarket", sender: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func financeBtnPressed(_ sender: Any) {
         canPerform = true
+        dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "monthToFinance", sender: nil)
     }
     
