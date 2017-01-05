@@ -12,9 +12,59 @@ class SettingsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UserDefaults.standard.set(closeCostPer, forKey: "closeCost")
+        UserDefaults.standard.synchronize()
 
+        if (UserDefaults.standard.object(forKey: "closeCost") != nil)
+        {
+            closeCostPer = UserDefaults.standard.object(forKey: "closeCost") as! Double!
+           
+        } else{
+            closeCostPer = 0.03
+        }
         
+        if (UserDefaults.standard.object(forKey: "agentFee") != nil)
+        {
+            agentFeePer = UserDefaults.standard.object(forKey: "agentFee") as! Double!
+        } else{
+            agentFeePer = 0.06
+        }
         
+        if (UserDefaults.standard.object(forKey: "holdCost") != nil)
+        {
+            holdCostPer = UserDefaults.standard.object(forKey: "holdCost") as! Double!
+        } else{
+            holdCostPer = 0.05
+        }
+        
+        if (UserDefaults.standard.object(forKey: "profit") != nil)
+        {
+            profitPer = UserDefaults.standard.object(forKey: "profit") as! Double!
+        } else{
+            profitPer = 0.15
+        }
+        
+        if (UserDefaults.standard.object(forKey: "downPay") != nil)
+        {
+            dwnPayPer = UserDefaults.standard.object(forKey: "downPay") as! Double!
+        } else{
+            dwnPayPer = 0.20
+        }
+        
+        if (UserDefaults.standard.object(forKey: "VacancyPer") != nil)
+        {
+            vacancyPer = UserDefaults.standard.object(forKey: "VacancyPer") as! Double!
+        } else{
+            vacancyPer = 0.10
+        }
+        
+        if (UserDefaults.standard.object(forKey: "property") != nil)
+        {
+            PropManPer = UserDefaults.standard.object(forKey: "property") as! Double!
+        } else{
+            PropManPer = 0.10
+        }
         
         
     }
@@ -64,71 +114,70 @@ class SettingsVC: UIViewController {
     @IBAction func ClosingCostAction(_ sender: Any) {
         closeCostPer = Double(closingCostField.text!)
         closeCostPer = closeCostPer / 100
+        
+        UserDefaults.standard.set(closeCostPer, forKey: "closeCost")
+        UserDefaults.standard.synchronize()
+        
+        
+        
     }
     
     @IBAction func AgentFeeAction(_ sender: Any) {
         agentFeePer = Double(agentFeeField.text!)
         agentFeePer = agentFeePer / 100
+        
+        UserDefaults.standard.set(agentFeePer, forKey: "agentFee")
+        UserDefaults.standard.synchronize()
     }
     
     @IBAction func holdCostAction(_ sender: Any) {
         holdCostPer = Double(holdingField.text!)
         holdCostPer = holdCostPer / 100
+        
+        UserDefaults.standard.set(holdCostPer, forKey: "holdCost")
+        UserDefaults.standard.synchronize()
     }
     
     @IBAction func profitFieldAction(_ sender: Any) {
         profitPer = Double(proftField.text!)
         profitPer = profitPer / 100
+        
+        UserDefaults.standard.set(profitPer, forKey: "profit")
+        UserDefaults.standard.synchronize()
     }
     
     @IBAction func downPayAction(_ sender: Any) {
         dwnPayPer = Double(dwnPayField.text!)
         dwnPayPer = dwnPayPer / 100
+        
+        UserDefaults.standard.set(dwnPayPer, forKey: "downPay")
+        UserDefaults.standard.synchronize()
     }
     
     @IBAction func vacancyAction(_ sender: Any) {
         vacancyPer = Double(vacancyField.text!)
         vacancyPer = vacancyPer / 100
+        
+        UserDefaults.standard.set(vacancyPer, forKey: "VacancyPer")
+        UserDefaults.standard.synchronize()
     }
     
     @IBAction func PropAction(_ sender: Any) {
         PropManPer = Double(propertyField.text!)
         PropManPer = PropManPer / 100
+        
+        UserDefaults.standard.set(PropManPer, forKey: "Property")
+        UserDefaults.standard.synchronize()
     }
     
     @IBAction func BackBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        
+        PictureofMarketVC().update()
     }
-    
-    
-    
-    
-    
     
     
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if (fromPicture)
-        {
-            let destViewController : PictureofMarketVC = segue.destination as! PictureofMarketVC
-        
-            destViewController.preCloseCost = closeCostPer
-            destViewController.preAgentFee = agentFeePer
-            destViewController.preHoldCost = holdCostPer
-            destViewController.preProfit = profitPer
-            
-        }
-        
-        if (canGoToFinance)
-        {
-            let destViewController : financialAnalVC = segue.destination as! financialAnalVC
-            
-            
-            
-            
-        }
-    }
  
 
 }

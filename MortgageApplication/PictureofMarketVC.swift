@@ -91,23 +91,59 @@ class PictureofMarketVC: UIViewController {
     
     @IBAction func CalcBtnPressed(_ sender: Any) {
         canGoToMonthly = true
-        dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "goToMonthlyPay", sender: nil)
     }
     
     @IBAction func financeBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "pictureToFinance", sender: nil)
-        dismiss(animated: true, completion: nil)
     }
     
     
     //Settings Button
     @IBAction func SettingsBtn(_ sender: Any) {
-        goingToSettings = true
         performSegue(withIdentifier: "pictureToSettings", sender: nil)
+        
+        UserDefaults.standard.set(currentPriceValue, forKey: "priceValue")
     }
     
 
+    
+    func update()
+    {
+        if (UserDefaults.standard.object(forKey: "closeCost") != nil)
+        {
+            preCloseCost = UserDefaults.standard.object(forKey: "closeCost") as! Double
+        }
+        
+        if (UserDefaults.standard.object(forKey: "agentFee") != nil)
+        {
+            preAgentFee = UserDefaults.standard.object(forKey: "agentFee") as! Double
+        }
+        
+        if (UserDefaults.standard.object(forKey: "holdCost") != nil)
+        {
+            preHoldCost = UserDefaults.standard.object(forKey: "holdCost") as! Double
+        }
+        
+        if (UserDefaults.standard.object(forKey: "profit") != nil)
+        {
+            preProfit = UserDefaults.standard.object(forKey: "profit") as! Double
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -115,6 +151,36 @@ class PictureofMarketVC: UIViewController {
     
     func displayAll()
     {
+        if (currentPriceValue == 0)
+        {
+            print ("tote")
+        currentPriceValue = UserDefaults.standard.object(forKey: "priceValue") as! Int
+        UserDefaults.standard.synchronize()
+        }
+        print (currentPriceValue)
+        
+        if (UserDefaults.standard.object(forKey: "closeCost") != nil)
+        {
+            preCloseCost = UserDefaults.standard.object(forKey: "closeCost") as! Double
+        }
+        
+        if (UserDefaults.standard.object(forKey: "agentFee") != nil)
+        {
+            preAgentFee = UserDefaults.standard.object(forKey: "agentFee") as! Double
+        }
+        
+        if (UserDefaults.standard.object(forKey: "holdCost") != nil)
+        {
+            preHoldCost = UserDefaults.standard.object(forKey: "holdCost") as! Double
+        }
+        
+        if (UserDefaults.standard.object(forKey: "profit") != nil)
+        {
+            preProfit = UserDefaults.standard.object(forKey: "profit") as! Double
+        }
+    
+        
+        
         //Change
         let tempCloseCost = ((Double(currentPriceValue)) * preCloseCost)
         let tempAgentFee = ((Double(currentPriceValue)) * preAgentFee)
@@ -123,6 +189,7 @@ class PictureofMarketVC: UIViewController {
         let tempProfit = ((Double(currentPriceValue)) * preProfit)
         let tempOffer = (tempNet - tempCloseCost - tempHoldingCost - tempProfit)
         downpaymentToPass = tempOffer * 0.20
+        
         
         if (priceField.hasText && repairsField.hasText)
         {
@@ -173,8 +240,6 @@ class PictureofMarketVC: UIViewController {
             let destViewController2 : SettingsVC = segue.destination as! SettingsVC
             
             destViewController2.fromPicture = true
-            
-            print (preCloseCost)
         }
         
     }
