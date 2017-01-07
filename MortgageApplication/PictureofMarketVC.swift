@@ -10,10 +10,6 @@ import UIKit
 
 class PictureofMarketVC: UIViewController {
     
-    var model = Model()
-    
-    //Try Catch blocks to try to grab the values from the settings tab, if catch occurs, it sets the defaults that are also set in the settiongs view controller
-    
     var preCloseCost = 0.03
     var preAgentFee = 0.06
     var preHoldCost = 0.05

@@ -10,9 +10,6 @@ import UIKit
 
 class financialAnalVC: UIViewController {
 
-    //Values Passed from other view controllers:
-    
-    
     
         //All views in the view controller:
     @IBOutlet weak var scrollViewer: UIScrollView!
@@ -38,11 +35,6 @@ class financialAnalVC: UIViewController {
     @IBOutlet weak var vacRentLossLabel: UILabel!
     @IBOutlet weak var rentAfterVacancyLabel: UILabel!
     
-    //Interest Rate Labels
-    @IBOutlet weak var interestTextField: UITextField!
-    @IBOutlet weak var termLabel: UILabel!
-    @IBOutlet weak var paymentLabel: UILabel!
-    
     //SecondView Text Fields
     @IBOutlet weak var repairsAndMaintField: UITextField!
     @IBOutlet weak var taxesField: UITextField!
@@ -67,6 +59,13 @@ class financialAnalVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if(offerGlobal != 0)
+        {
+            contractedPriceField.text = String(offerGlobal)
+        }else{
+            contractedPriceField.text = ""
+        }
+        
         if (repairsGlobal != 0)
         {
             repairsField.text = ("\(repairsGlobal)")
@@ -75,51 +74,26 @@ class financialAnalVC: UIViewController {
             repairsField.text = "20000"
         }
         
-        if (interestGlobal != 0.0)
-        {
-        interestTextField.text = ("\(interestGlobal * 100)")
-        }
-        else {
-            interestTextField.text = "5.5"
-        }
-        
-        if (termGlobal != 0)
-        {
-        termLabel.text = ("\(termGlobal)")
-        }
-        else{
-            termLabel.text = "20"
-        }
-        
         //Setting the scroll views content size to the actual size of the content that needs to be "scrollable"
-        scrollViewer.contentSize.height = 2650
+        scrollViewer.contentSize.height = 2500
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        if (offerGlobal != 0)
+        {
+            contractedPriceField.text = String(offerGlobal)
+        }else{
+            contractedPriceField.text = ""
+        }
+        
         if (repairsGlobal != 0)
         {
             repairsField.text = ("\(repairsGlobal)")
         }
         else{
             repairsField.text = "20000"
-        }
-        
-        if (interestGlobal != 0.0)
-        {
-            interestTextField.text = ("\(interestGlobal * 100)")
-        }
-        else {
-            interestTextField.text = "5.5"
-        }
-        
-        if (termGlobal != 0)
-        {
-            termLabel.text = ("\(termGlobal)")
-        }
-        else{
-            termLabel.text = "20"
         }
         
     }
@@ -263,6 +237,7 @@ class financialAnalVC: UIViewController {
             {
             let total = Int(totalLabel2.text!)
             noi = rentAfterVac! - total!
+                noi *= 100
             noiLabel.text = ("\(noi)")
             }
             

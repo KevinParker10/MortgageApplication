@@ -9,8 +9,6 @@
 import UIKit
 
 class SettingsVC: UIViewController {
-
-    var model = Model()
     
     var closeCoster = closecostGlobal
     var holdCoster = holdcostGlobal
