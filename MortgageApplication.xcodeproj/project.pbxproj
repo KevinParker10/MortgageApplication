@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52185E051DC1051D00E26E15 /* PictureofMarketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52185E041DC1051D00E26E15 /* PictureofMarketVC.swift */; };
+		523AF1831E20621F00C52675 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523AF1821E20621F00C52675 /* Model.swift */; };
 		5251942D1E052F78002981DF /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251942C1E052F78002981DF /* LoginVC.swift */; };
 		52B6116C1DB7D38700BD1E65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */; };
 		52B6116E1DB7D38700BD1E65 /* MonthlyPaymentVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVc.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		52185E041DC1051D00E26E15 /* PictureofMarketVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureofMarketVC.swift; sourceTree = "<group>"; };
+		523AF1821E20621F00C52675 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		5251942C1E052F78002981DF /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		52B611681DB7D38700BD1E65 /* MortgageApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MortgageApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B6116B1DB7D38700BD1E65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				52B6116D1DB7D38700BD1E65 /* MonthlyPaymentVc.swift */,
 				52C5C8461E07C80200BA15A3 /* financialAnalVC.swift */,
 				52B6116F1DB7D38700BD1E65 /* Main.storyboard */,
+				523AF1821E20621F00C52675 /* Model.swift */,
 				52B8A5A41E1CBAC600E68968 /* SettingsVC.swift */,
 				52B611721DB7D38700BD1E65 /* Assets.xcassets */,
 				52B611741DB7D38700BD1E65 /* LaunchScreen.storyboard */,
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				523AF1831E20621F00C52675 /* Model.swift in Sources */,
 				52C5C8471E07C80200BA15A3 /* financialAnalVC.swift in Sources */,
 				52185E051DC1051D00E26E15 /* PictureofMarketVC.swift in Sources */,
 				52B6116E1DB7D38700BD1E65 /* MonthlyPaymentVc.swift in Sources */,

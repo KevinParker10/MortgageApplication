@@ -10,7 +10,7 @@ import UIKit
 
 class PictureofMarketVC: UIViewController {
     
-    
+    var model = Model()
     
     //Try Catch blocks to try to grab the values from the settings tab, if catch occurs, it sets the defaults that are also set in the settiongs view controller
     
@@ -62,6 +62,10 @@ class PictureofMarketVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        displayAll()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -83,8 +87,8 @@ class PictureofMarketVC: UIViewController {
     @IBAction func repairsEditingChanged(_ sender: Any) {
         if(repairsField.text! != "")
         {
-            
             currentRepairsValue = Int(repairsField.text!)!
+            repairsGlobal = currentRepairsValue
         }
         displayAll()
     }
@@ -151,34 +155,12 @@ class PictureofMarketVC: UIViewController {
     
     func displayAll()
     {
-        if (currentPriceValue == 0)
-        {
-            print ("tote")
-        currentPriceValue = UserDefaults.standard.object(forKey: "priceValue") as! Int
-        UserDefaults.standard.synchronize()
-        }
-        print (currentPriceValue)
         
-        if (UserDefaults.standard.object(forKey: "closeCost") != nil)
+        if (closecostGlobal != 0.0)
         {
-            preCloseCost = UserDefaults.standard.object(forKey: "closeCost") as! Double
+            preCloseCost = closecostGlobal
         }
         
-        if (UserDefaults.standard.object(forKey: "agentFee") != nil)
-        {
-            preAgentFee = UserDefaults.standard.object(forKey: "agentFee") as! Double
-        }
-        
-        if (UserDefaults.standard.object(forKey: "holdCost") != nil)
-        {
-            preHoldCost = UserDefaults.standard.object(forKey: "holdCost") as! Double
-        }
-        
-        if (UserDefaults.standard.object(forKey: "profit") != nil)
-        {
-            preProfit = UserDefaults.standard.object(forKey: "profit") as! Double
-        }
-    
         
         
         //Change
@@ -207,6 +189,8 @@ class PictureofMarketVC: UIViewController {
             profitLabel.text = ("\(tempProfit)")
             
             offerLabel.text = ("\(tempOffer)")
+            
+            offerGlobal = Int(Double(tempOffer))
         }
         
         else
@@ -220,29 +204,12 @@ class PictureofMarketVC: UIViewController {
             offerLabel.text = ""
         }
         offerBool = true
-        //MonthlyPaymentVc().displayValues()
+        if (offerLabel.text != "")
+        {
+        
+        }
     }
     
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (canGoToMonthly)
-        {
-        let destViewController : MonthlyPaymentVc = segue.destination as! MonthlyPaymentVc
-        
-        destViewController.passedOffer = offerLabel!.text
-        destViewController.passedDownPayment = downpaymentToPass
-        destViewController.passedRepairs = currentRepairsValue
-        }
-        
-        if (goingToSettings)
-        {
-            let destViewController2 : SettingsVC = segue.destination as! SettingsVC
-            
-            destViewController2.fromPicture = true
-        }
-        
-    }
     
 
         

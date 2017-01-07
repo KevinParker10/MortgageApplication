@@ -12,27 +12,6 @@ class financialAnalVC: UIViewController {
 
     //Values Passed from other view controllers:
     
-    var passedRepairS:Int!
-    var passedInterest:Double!
-    var passedTerm:Double!
-    
-    var goingToSettings = false
-
-    //Tab Buttons
-    @IBAction func calcBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func investBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "financeToPicture", sender: nil)
-    }
-    
-    //Settings Button
-    @IBAction func settingsBtnPressed(_ sender: Any) {
-        goingToSettings = true
-        performSegue(withIdentifier: "financeToSettings", sender: nil)
-    }
-    
     
     
         //All views in the view controller:
@@ -88,25 +67,25 @@ class financialAnalVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (passedRepairS != nil)
+        if (repairsGlobal != 0)
         {
-            repairsField.text = ("\(passedRepairS!)")
+            repairsField.text = ("\(repairsGlobal)")
         }
         else{
             repairsField.text = "20000"
         }
         
-        if (passedInterest != nil)
+        if (interestGlobal != 0.0)
         {
-        interestTextField.text = ("\(passedInterest!)")
+        interestTextField.text = ("\(interestGlobal * 100)")
         }
         else {
             interestTextField.text = "5.5"
         }
         
-        if (passedTerm != nil)
+        if (termGlobal != 0)
         {
-        termLabel.text = ("\(passedTerm!)")
+        termLabel.text = ("\(termGlobal)")
         }
         else{
             termLabel.text = "20"
@@ -116,6 +95,37 @@ class financialAnalVC: UIViewController {
         scrollViewer.contentSize.height = 2650
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if (repairsGlobal != 0)
+        {
+            repairsField.text = ("\(repairsGlobal)")
+        }
+        else{
+            repairsField.text = "20000"
+        }
+        
+        if (interestGlobal != 0.0)
+        {
+            interestTextField.text = ("\(interestGlobal * 100)")
+        }
+        else {
+            interestTextField.text = "5.5"
+        }
+        
+        if (termGlobal != 0)
+        {
+            termLabel.text = ("\(termGlobal)")
+        }
+        else{
+            termLabel.text = "20"
+        }
+        
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
