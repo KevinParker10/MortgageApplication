@@ -10,22 +10,6 @@ import UIKit
 
 class financialAnalVC: UIViewController {
 
-    //Values Passed from other view controllers:
-    
-    var passedRepairS:Int!
-    var passedInterest:Double!
-    var passedTerm:Double!
-
-    //Tab Buttons
-    @IBAction func calcBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func investBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "financeToPicture", sender: nil)
-    }
-    
-    
     
         //All views in the view controller:
     @IBOutlet weak var scrollViewer: UIScrollView!
@@ -34,7 +18,7 @@ class financialAnalVC: UIViewController {
     @IBOutlet weak var financialAssumptionsView: UIView!
     
     
-    //Declerations for all views
+        //Declerations for all views
     
     //Cost and Revenue View Text Fields
     @IBOutlet weak var contractedPriceField: UITextField!
@@ -50,11 +34,6 @@ class financialAnalVC: UIViewController {
     @IBOutlet weak var grossMonthRevLabel: UILabel!
     @IBOutlet weak var vacRentLossLabel: UILabel!
     @IBOutlet weak var rentAfterVacancyLabel: UILabel!
-    
-    //Interest Rate Labels
-    @IBOutlet weak var interestTextField: UITextField!
-    @IBOutlet weak var termLabel: UILabel!
-    @IBOutlet weak var paymentLabel: UILabel!
     
     //SecondView Text Fields
     @IBOutlet weak var repairsAndMaintField: UITextField!
@@ -80,21 +59,47 @@ class financialAnalVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (passedRepairS != nil)
+        if(offerGlobal != 0)
         {
-            repairsField.text = ("\(passedRepairS!)")
+            contractedPriceField.text = String(offerGlobal)
+        }else{
+            contractedPriceField.text = ""
+        }
+        
+        if (repairsGlobal != 0)
+        {
+            repairsField.text = ("\(repairsGlobal)")
         }
         else{
             repairsField.text = "20000"
         }
         
-        interestTextField.text = ("\(passedInterest!)")
-        termLabel.text = ("\(passedTerm!)")
-        
         //Setting the scroll views content size to the actual size of the content that needs to be "scrollable"
-        scrollViewer.contentSize.height = 2650
+        scrollViewer.contentSize.height = 2500
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if (offerGlobal != 0)
+        {
+            contractedPriceField.text = String(offerGlobal)
+        }else{
+            contractedPriceField.text = ""
+        }
+        
+        if (repairsGlobal != 0)
+        {
+            repairsField.text = ("\(repairsGlobal)")
+        }
+        else{
+            repairsField.text = "20000"
+        }
+        
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -232,6 +237,7 @@ class financialAnalVC: UIViewController {
             {
             let total = Int(totalLabel2.text!)
             noi = rentAfterVac! - total!
+                noi *= 100
             noiLabel.text = ("\(noi)")
             }
             
@@ -251,14 +257,11 @@ class financialAnalVC: UIViewController {
     
     
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
+
 
 }

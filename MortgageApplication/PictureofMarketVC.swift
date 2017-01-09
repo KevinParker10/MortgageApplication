@@ -10,6 +10,18 @@ import UIKit
 
 class PictureofMarketVC: UIViewController {
     
+    var preCloseCost = 0.03
+    var preAgentFee = 0.06
+    var preHoldCost = 0.05
+    var preProfit = 0.15
+    
+    
+    
+    
+    
+    
+    
+    
     //Decleration of variables used in this VC
     
     var currentPriceValue = 0
@@ -17,6 +29,8 @@ class PictureofMarketVC: UIViewController {
     var value = 0
     var offerBool = false
     var downpaymentToPass = 0.0
+    var canGoToMonthly = false
+    var goingToSettings = false
     
     
     //Declerations of outlets
@@ -25,9 +39,8 @@ class PictureofMarketVC: UIViewController {
     @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet weak var financeBtn: UIButton!
     
-    //Decleration of outlets that are for description of values
     
-    
+        //Decleration of outlets that are for description of values
     
     //Outlets for the bottom display labels
     
@@ -45,6 +58,10 @@ class PictureofMarketVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        displayAll()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -66,13 +83,14 @@ class PictureofMarketVC: UIViewController {
     @IBAction func repairsEditingChanged(_ sender: Any) {
         if(repairsField.text! != "")
         {
-            
             currentRepairsValue = Int(repairsField.text!)!
+            repairsGlobal = currentRepairsValue
         }
         displayAll()
     }
     
     @IBAction func CalcBtnPressed(_ sender: Any) {
+        canGoToMonthly = true
         performSegue(withIdentifier: "goToMonthlyPay", sender: nil)
     }
     
@@ -80,7 +98,52 @@ class PictureofMarketVC: UIViewController {
         performSegue(withIdentifier: "pictureToFinance", sender: nil)
     }
     
+    
+    //Settings Button
+    @IBAction func SettingsBtn(_ sender: Any) {
+        performSegue(withIdentifier: "pictureToSettings", sender: nil)
+        
+        UserDefaults.standard.set(currentPriceValue, forKey: "priceValue")
+    }
+    
 
+    
+    func update()
+    {
+        if (UserDefaults.standard.object(forKey: "closeCost") != nil)
+        {
+            preCloseCost = UserDefaults.standard.object(forKey: "closeCost") as! Double
+        }
+        
+        if (UserDefaults.standard.object(forKey: "agentFee") != nil)
+        {
+            preAgentFee = UserDefaults.standard.object(forKey: "agentFee") as! Double
+        }
+        
+        if (UserDefaults.standard.object(forKey: "holdCost") != nil)
+        {
+            preHoldCost = UserDefaults.standard.object(forKey: "holdCost") as! Double
+        }
+        
+        if (UserDefaults.standard.object(forKey: "profit") != nil)
+        {
+            preProfit = UserDefaults.standard.object(forKey: "profit") as! Double
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -88,14 +151,23 @@ class PictureofMarketVC: UIViewController {
     
     func displayAll()
     {
+        
+        if (closecostGlobal != 0.0)
+        {
+            preCloseCost = closecostGlobal
+        }
+        
+        
+        
         //Change
-        let tempCloseCost = ((Double(currentPriceValue)) * 0.03)
-        let tempAgentFee = ((Double(currentPriceValue)) * 0.06)
+        let tempCloseCost = ((Double(currentPriceValue)) * preCloseCost)
+        let tempAgentFee = ((Double(currentPriceValue)) * preAgentFee)
         let tempNet = (Double(currentPriceValue) - tempCloseCost - tempAgentFee - (Double(currentRepairsValue)))
-        let tempHoldingCost = ((Double(currentPriceValue)) * 0.05)
-        let tempProfit = ((Double(currentPriceValue)) * 0.15)
+        let tempHoldingCost = ((Double(currentPriceValue)) * preHoldCost)
+        let tempProfit = ((Double(currentPriceValue)) * preProfit)
         let tempOffer = (tempNet - tempCloseCost - tempHoldingCost - tempProfit)
         downpaymentToPass = tempOffer * 0.20
+        
         
         if (priceField.hasText && repairsField.hasText)
         {
@@ -113,6 +185,8 @@ class PictureofMarketVC: UIViewController {
             profitLabel.text = ("\(tempProfit)")
             
             offerLabel.text = ("\(tempOffer)")
+            
+            offerGlobal = Int(Double(tempOffer))
         }
         
         else
@@ -126,20 +200,12 @@ class PictureofMarketVC: UIViewController {
             offerLabel.text = ""
         }
         offerBool = true
-        //MonthlyPaymentVc().displayValues()
+        if (offerLabel.text != "")
+        {
+        
+        }
     }
     
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destViewController : MonthlyPaymentVc = segue.destination as! MonthlyPaymentVc
-        
-        destViewController.passedOffer = offerLabel!.text
-        destViewController.passedDownPayment = downpaymentToPass
-        destViewController.passedRepairs = currentRepairsValue
-        
-        
-    }
     
 
         

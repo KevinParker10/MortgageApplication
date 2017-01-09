@@ -8,35 +8,47 @@
 
 import UIKit
 
+var closecostGlobal : Double = 0.03
+var agentfeeGlobal : Double = 0.06
+var holdcostGlobal :  Double = 0.05
+var profitGlobal : Double = 0.15
+var downPaymentGlobal : Double = 0.20
+var vacRentLossGlobal : Double = 0.10
+var propManagGlobal : Double = 0.10
+var offerGlobal : Int = Int()
+var repairsGlobal : Int = Int()
+var interestGlobal : Double = Double()
+var termGlobal : Int = Int()
 class MonthlyPaymentVc: UIViewController {
     
-var canPerform = false
-
+    
+    var closingCostPercentage = 0.03
+    var downPaymentPercentage = 0.20
+    var offer: Int = 0
+    
+    
+    
     
     override func viewDidLoad() {
-        super.viewDidLoad()//change
-        
-        if (Double(passedOffer) != nil)
-        {
-        offerField.text = passedOffer
-        downPaymentPer.text = "20"
-        interestField.text = "5.5"
-        termField.text = "20"
-        downPaymentField.text = (String(passedDownPayment))
-        
-        monthlyPaymentCalc()
-        }
+        super.viewDidLoad()
+        offerField.text = String(offerGlobal)
+        downPaymentGlobal = 0.20
+        downPaymentPer.text = String(Int(downPaymentGlobal * 100))
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        offerField.text = String(offerGlobal)
+        closingCostPercentage = closecostGlobal
+        downPaymentPer.text = String(Int(downPaymentGlobal * 100))
+        
+        monthlyPaymentCalc()
+        
+    }
     
-    
-    //Receiveing the variables that are passed from the PictureOfMarketVC
-    var passedOffer:String!
-    var passedDownPayment:Double!
-    var passedRepairs:Int!
-    var passingInterst = 5.5
-    var passingTerm = 20.0
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -67,6 +79,7 @@ var canPerform = false
     
     @IBAction func interestRateAction(_ sender: Any) {
         monthlyPaymentCalc()
+        interestGlobal = Double(Double(interestField.text!)! / 100)
     }
     
     @IBAction func termAction(_ sender: Any) {
@@ -74,41 +87,31 @@ var canPerform = false
     }
     
     
-    
-    //Actions for the tab bar buttons
-    
-    @IBAction func investBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "goToPictureofMarket", sender: nil)
-    }
-    
-    @IBAction func financeBtnPressed(_ sender: Any) {
-        canPerform = true
-        performSegue(withIdentifier: "monthToFinance", sender: nil)
-    }
-    
+
 
 
         func monthlyPaymentCalc()
         {
-        //print("Got to the method")
+            
+            
+            
+            
         var interest = Double(interestField.text!)
-        var downPaymentPercentage = Double(downPaymentPer.text!)
+        downPaymentPercentage = downPaymentGlobal
         var lengthofMor = Double(termField.text!)
         var principalAmnt = Double(offerField.text!)
             
-            passingTerm = lengthofMor!
             
-            if (downPaymentPercentage != 0)
+            if (downPaymentPercentage != 0.0)
             {
-                downPaymentPercentage = downPaymentPercentage! / 100
-                let downpayment = principalAmnt! * downPaymentPercentage!
+                let downpayment = principalAmnt! * downPaymentPercentage
                 downPaymentField.text = ("\(downpayment)")
             }
 
         if (interestField.hasText && termField.hasText && offerField.hasText)
         {
-            let closingCost = principalAmnt! * 0.03
-            let downpayment = principalAmnt! * downPaymentPercentage!
+            let closingCost = principalAmnt! * closingCostPercentage
+            let downpayment = principalAmnt! * downPaymentPercentage
             principalAmnt = principalAmnt! + closingCost - downpayment
             lengthofMor! = lengthofMor! * 12
             interest = (interest! / 100) / 12
@@ -119,9 +122,6 @@ var canPerform = false
             var monthlyPay = numerator/denominator
             monthlyPay = monthlyPay * 12
             monthlyPay = Double(round(100 * monthlyPay)/100)
-            
-            //monthlyPay = round(monthlyPay * 100) / 100
-        
             annualPayLabel.text = "\(monthlyPay)"
         }
             
@@ -132,15 +132,6 @@ var canPerform = false
 
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (canPerform)
-        {
-            let destViewController2 : financialAnalVC = segue.destination as! financialAnalVC
-        destViewController2.passedRepairS = passedRepairs
-        destViewController2.passedInterest = passingInterst
-        destViewController2.passedTerm = passingTerm
-        }
-    }
     
     
     

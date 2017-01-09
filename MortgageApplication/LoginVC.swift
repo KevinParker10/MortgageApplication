@@ -31,7 +31,6 @@ class LoginVC: UIViewController {
         
         if (loginField.text == "admin" && passField.text == "admin")
         {
-            dismiss(animated: true, completion: nil)
             performSegue(withIdentifier: "loginSegue", sender: nil)
         }
         else{
