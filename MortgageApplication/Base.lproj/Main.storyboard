@@ -33,7 +33,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfv-5x-x8E">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfv-5x-x8E">
                                 <rect key="frame" x="68" y="111" width="278" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1zd-na-aka"/>
@@ -400,7 +400,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="OTr-mC-ZAb"/>
                                 </connections>
@@ -412,7 +412,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="downPaymentAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="PRV-vC-iJg"/>
                                 </connections>
@@ -424,7 +424,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="interestRateAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="T2P-mT-YG2"/>
                                 </connections>
@@ -436,7 +436,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="termAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="dB8-Sy-I5s"/>
                                 </connections>
@@ -572,7 +572,7 @@
                                                 <rect key="frame" x="8" y="37" width="271" height="30"/>
                                                 <color key="textColor" red="1" green="0.66442827660000003" blue="0.098857042830000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="contractPriceAction:" destination="ge7-Sh-qet" eventType="editingChanged" id="eTX-qn-YAq"/>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="gSA-On-9zG"/>
@@ -615,7 +615,7 @@
                                                 <rect key="frame" x="8" y="211" width="271" height="30"/>
                                                 <color key="textColor" red="1" green="0.66442827660000003" blue="0.098857042830000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="j0u-Vf-sWS"/>
                                                 </connections>
@@ -624,7 +624,7 @@
                                                 <rect key="frame" x="8" y="292" width="271" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="numOfUnitsAction:" destination="ge7-Sh-qet" eventType="editingChanged" id="ORx-YO-bEz"/>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Ghj-Sj-aqE"/>
@@ -671,7 +671,7 @@
                                                 <rect key="frame" x="8" y="375" width="271" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="avgMonthlyRentAction:" destination="ge7-Sh-qet" eventType="editingChanged" id="YMq-sL-52U"/>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="j4Q-rD-D7s"/>
@@ -730,6 +730,7 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="d1o-QV-Crp" firstAttribute="trailing" secondItem="UOX-PE-5mb" secondAttribute="trailing" id="31U-RS-01N"/>
                                             <constraint firstItem="Wua-yD-tqN" firstAttribute="trailing" secondItem="Fcq-nT-zMg" secondAttribute="trailing" id="3hj-2H-1UG"/>
@@ -795,6 +796,9 @@
                                             <constraint firstItem="zdN-cE-nLT" firstAttribute="firstBaseline" secondItem="Wua-yD-tqN" secondAttribute="firstBaseline" id="yed-Tp-3hO"/>
                                             <constraint firstItem="wji-mN-u4x" firstAttribute="leading" secondItem="Foe-oC-TAJ" secondAttribute="leading" id="yjU-na-GPp"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="393-j3-lwV" appends="YES" id="rmF-xY-boP"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etD-Hq-hNa">
                                         <rect key="frame" x="8" y="630" width="304" height="507"/>
@@ -822,7 +826,7 @@
                                                 <rect key="frame" x="8" y="37" width="271" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="h5J-hn-XAq"/>
                                                     <action selector="repairsAction:" destination="ge7-Sh-qet" eventType="editingChanged" id="rIj-l8-G2V"/>
@@ -832,7 +836,7 @@
                                                 <rect key="frame" x="8" y="118" width="271" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="zU7-Oo-hF2"/>
                                                     <action selector="taxesAction:" destination="ge7-Sh-qet" eventType="editingChanged" id="L9d-kE-cyq"/>
@@ -851,7 +855,7 @@
                                                 <rect key="frame" x="8" y="201" width="271" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="insuranceAction:" destination="ge7-Sh-qet" eventType="editingChanged" id="o0K-w3-zLG"/>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="PrC-DL-Ery"/>
@@ -894,7 +898,7 @@
                                                 <rect key="frame" x="8" y="407" width="271" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Ez9-hV-AXk"/>
                                                     <action selector="trashAction:" destination="ge7-Sh-qet" eventType="editingChanged" id="62f-iA-M3s"/>
@@ -904,7 +908,7 @@
                                                 <rect key="frame" x="8" y="327" width="271" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="UtilitiesAction:" destination="ge7-Sh-qet" eventType="editingChanged" id="UwZ-nY-spX"/>
                                                     <action selector="offerAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Ufh-6j-3oF"/>
@@ -927,6 +931,7 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="Hqj-HS-mFY" firstAttribute="leading" secondItem="r66-BN-kQu" secondAttribute="leading" id="0r0-5C-um6"/>
                                             <constraint firstItem="6A8-8s-x9E" firstAttribute="top" secondItem="BNd-oa-qCS" secondAttribute="bottom" constant="8" symbolic="YES" id="0wc-Rg-A00"/>
@@ -973,6 +978,9 @@
                                             <constraint firstItem="lRq-iZ-D5D" firstAttribute="leading" secondItem="etD-Hq-hNa" secondAttribute="leadingMargin" id="zVF-2R-lEs"/>
                                             <constraint firstItem="uXK-Lt-4Kt" firstAttribute="top" secondItem="Ynm-dP-3iP" secondAttribute="bottom" constant="22" id="zuJ-80-XjQ"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="s3d-HI-Zuo" appends="YES" id="NJo-cP-ovO"/>
+                                        </connections>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Operating Expenses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHv-J3-4Oc">
                                         <rect key="frame" x="35" y="601" width="250" height="21"/>
@@ -1178,6 +1186,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3n-Ad-2Fk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="393-j3-lwV" userLabel="CostTap">
+                    <connections>
+                        <action selector="CostAndRevenueTap:" destination="ge7-Sh-qet" id="L3h-ct-sAC"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="s3d-HI-Zuo" userLabel="OperatingTap">
+                    <connections>
+                        <action selector="OperatingTap:" destination="ge7-Sh-qet" id="8S3-23-Bmk"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="856.875" y="130.98591549295776"/>
         </scene>
@@ -1233,7 +1251,7 @@
                                 <rect key="frame" x="212" y="57" width="154" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="ClosingCostAction:" destination="0wj-n3-r5p" eventType="editingDidEnd" id="xUE-bW-BfG"/>
                                 </connections>
@@ -1242,7 +1260,7 @@
                                 <rect key="frame" x="212" y="101" width="154" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="AgentFeeAction:" destination="0wj-n3-r5p" eventType="editingDidEnd" id="9FI-AZ-gBm"/>
                                 </connections>
@@ -1251,7 +1269,7 @@
                                 <rect key="frame" x="212" y="147" width="154" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="holdCostAction:" destination="0wj-n3-r5p" eventType="editingDidEnd" id="Frx-2g-Myp"/>
                                 </connections>
@@ -1260,7 +1278,7 @@
                                 <rect key="frame" x="212" y="192" width="154" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="profitFieldAction:" destination="0wj-n3-r5p" eventType="editingDidEnd" id="hgp-xq-sxX"/>
                                 </connections>
@@ -1342,7 +1360,7 @@
                                 <rect key="frame" x="218" y="280" width="154" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="downPayAction:" destination="0wj-n3-r5p" eventType="editingDidEnd" id="A9U-Ve-L5v"/>
                                 </connections>
@@ -1351,7 +1369,7 @@
                                 <rect key="frame" x="218" y="331" width="154" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="vacancyAction:" destination="0wj-n3-r5p" eventType="editingDidEnd" id="8nX-zk-imU"/>
                                 </connections>
@@ -1360,7 +1378,7 @@
                                 <rect key="frame" x="218" y="380" width="154" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="PropAction:" destination="0wj-n3-r5p" eventType="editingDidEnd" id="re9-c8-vEO"/>
                                 </connections>

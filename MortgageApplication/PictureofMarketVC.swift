@@ -55,7 +55,7 @@ class PictureofMarketVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()        
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view. yes
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -66,6 +66,11 @@ class PictureofMarketVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
     }
     
     //text field actions
