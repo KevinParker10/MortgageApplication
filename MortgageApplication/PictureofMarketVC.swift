@@ -55,7 +55,7 @@ class PictureofMarketVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()        
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view. yes
     }
     
     override func viewDidAppear(_ animated: Bool) {
