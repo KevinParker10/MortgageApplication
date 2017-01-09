@@ -33,6 +33,11 @@ class SettingsVC: UIViewController {
         vacancyField.text = String((Int(vacRentLossGlobal * 100)))
         propertyField.text = String((Int(propManagGlobal * 100)))
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+    }
 
     var canGoToFinance = false
     var canGoToPicture = false

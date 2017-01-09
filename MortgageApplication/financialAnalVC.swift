@@ -9,7 +9,6 @@
 import UIKit
 
 class financialAnalVC: UIViewController {
-
     
         //All views in the view controller:
     @IBOutlet weak var scrollViewer: UIScrollView!
@@ -54,7 +53,31 @@ class financialAnalVC: UIViewController {
     @IBOutlet weak var noiLabel: UILabel!
     
     
+    @IBAction func CostAndRevenueTap(_ sender: Any) {
+        view.endEditing(true)
+        
+    }
     
+    
+    @IBAction func OperatingTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, with: event)
+        scrollViewer.keyboardDismissMode = .onDrag
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +96,8 @@ class financialAnalVC: UIViewController {
         else{
             repairsField.text = "20000"
         }
+        
+        
         
         //Setting the scroll views content size to the actual size of the content that needs to be "scrollable"
         scrollViewer.contentSize.height = 2500
