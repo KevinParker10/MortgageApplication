@@ -18,10 +18,6 @@ class PictureofMarketVC: UIViewController {
     
     
     
-    
-    
-    
-    
     //Decleration of variables used in this VC
     
     var currentPriceValue = 0
@@ -67,6 +63,11 @@ class PictureofMarketVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func MainViewTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

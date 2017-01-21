@@ -19,6 +19,8 @@ var offerGlobal : Int = Int()
 var repairsGlobal : Int = Int()
 var interestGlobal : Double = Double()
 var termGlobal : Int = Int()
+var totalGlobal : Int = Int()
+
 class MonthlyPaymentVc: UIViewController {
     
     
@@ -66,6 +68,7 @@ class MonthlyPaymentVc: UIViewController {
     @IBOutlet weak var interestField: UITextField!
     @IBOutlet weak var termField: UITextField!
     @IBOutlet weak var annualPayLabel: UILabel!
+    @IBOutlet weak var monthlyPayLabel: UILabel!
     @IBOutlet weak var downPaymentPer: UITextField!
     @IBOutlet weak var investBtn: UIButton!
     @IBOutlet weak var financeBtn: UIButton!
@@ -125,9 +128,11 @@ class MonthlyPaymentVc: UIViewController {
             let denominator = (pow((1+interest!),lengthofMor!) - 1 )
             
             var monthlyPay = numerator/denominator
-            monthlyPay = monthlyPay * 12
+            var annualPay = monthlyPay * 12
+            annualPay = Double(round(100 * annualPay)/100)
             monthlyPay = Double(round(100 * monthlyPay)/100)
-            annualPayLabel.text = "\(monthlyPay)"
+            annualPayLabel.text = "\(annualPay)"
+            monthlyPayLabel.text = "\(monthlyPay)"
         }
             
         else{

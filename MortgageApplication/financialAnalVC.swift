@@ -63,14 +63,12 @@ class financialAnalVC: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func FinanceAssumTap(_ sender: Any) {
+        view.endEditing(true)
+    }
     
     
 
-    
-    
-    
-    
-    
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -78,6 +76,7 @@ class financialAnalVC: UIViewController {
         super.touchesBegan(touches, with: event)
         scrollViewer.keyboardDismissMode = .onDrag
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -177,7 +176,7 @@ class financialAnalVC: UIViewController {
             let downPaymentInt = Int(downPayment)
             let ClosingCostInt = Int(ClosingCost)
         let total = ((Int(contractedPrice))! + ClosingCostInt - downPaymentInt)
-        
+            totalGlobal = (total)
             dwnPaymentLabel.text = ("\(downPayment)")
             closeCostLabel.text = ("\(ClosingCostInt)")
             totalLabel.text = ("\(total)")
@@ -262,17 +261,16 @@ class financialAnalVC: UIViewController {
             {
             let total = Int(totalLabel2.text!)
             noi = rentAfterVac! - total!
-                noi *= 100
+                //noi *= 100
             noiLabel.text = ("\(noi)")
+                
+                
+            var capRate = Double(noi/total1!)
+                capRate = capRate * 100
+                capRateLabel.text = String(capRate)
             }
             
-            
-            if (noiLabel.text != "" && closeCostLabel.text != "")
-            {
-            let capRate = noi/total1!
-            capRateLabel.text = ("\(capRate)")
-            }
-        }
+                }
         
     }
     
