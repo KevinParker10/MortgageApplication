@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uKa-cn-PWS">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,11 +21,11 @@
                         <viewControllerLayoutGuide type="bottom" id="J74-IQ-6Ub"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ss8-h2-J5K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fLH-QL-5AX">
-                                <rect key="frame" x="64" y="176" width="192" height="30"/>
+                                <rect key="frame" x="111" y="176" width="192" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="MxP-CC-ObZ"/>
@@ -37,7 +37,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfv-5x-x8E">
-                                <rect key="frame" x="64" y="124" width="192" height="30"/>
+                                <rect key="frame" x="111" y="124" width="192" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="192" id="WmB-8W-fTz"/>
@@ -49,7 +49,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSX-ND-a83">
-                                <rect key="frame" x="64" y="79" width="192" height="28"/>
+                                <rect key="frame" x="111" y="79" width="192" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="XTG-wN-msJ"/>
                                 </constraints>
@@ -57,13 +57,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmR-jE-tEL">
-                                <rect key="frame" x="109" y="241" width="99" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.66442827660000003" blue="0.098857042830000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohC-Nr-QGd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Godspeed Investors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzt-lP-qga">
+                                <rect key="frame" x="20" y="28" width="180" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Pg2-kg-zoL"/>
-                                    <constraint firstAttribute="width" constant="99" id="ci4-gU-ayU"/>
+                                    <constraint firstAttribute="width" constant="180" id="GxS-dD-D5M"/>
+                                    <constraint firstAttribute="height" constant="28" id="UVR-c3-b9a"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmR-jE-tEL">
+                                <rect key="frame" x="111" y="244" width="192" height="31"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,23 +86,6 @@
                                     <segue destination="5RU-gk-Pw3" kind="showDetail" identifier="loginSegue" id="Xz3-di-WEs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohC-Nr-QGd">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
-                                <color key="backgroundColor" red="1" green="0.66442827660000003" blue="0.098857042830000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Godspeed Investors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzt-lP-qga">
-                                <rect key="frame" x="16" y="28" width="180" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="GxS-dD-D5M"/>
-                                    <constraint firstAttribute="height" constant="28" id="UVR-c3-b9a"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -100,18 +96,19 @@
                             <constraint firstItem="LSX-ND-a83" firstAttribute="top" secondItem="ohC-Nr-QGd" secondAttribute="bottom" constant="16" id="8uR-vo-4n7"/>
                             <constraint firstItem="dfv-5x-x8E" firstAttribute="trailing" secondItem="fLH-QL-5AX" secondAttribute="trailing" id="B8p-2A-0va"/>
                             <constraint firstItem="LSX-ND-a83" firstAttribute="trailing" secondItem="dfv-5x-x8E" secondAttribute="trailing" id="Hby-1S-fDA"/>
+                            <constraint firstItem="RmR-jE-tEL" firstAttribute="trailing" secondItem="fLH-QL-5AX" secondAttribute="trailing" id="Ofo-H3-mpl"/>
+                            <constraint firstItem="RmR-jE-tEL" firstAttribute="top" secondItem="fLH-QL-5AX" secondAttribute="bottom" constant="38" id="SH3-mY-la9"/>
                             <constraint firstItem="LSX-ND-a83" firstAttribute="leading" secondItem="Ss8-h2-J5K" secondAttribute="leadingMargin" constant="48" id="StF-ij-w9N"/>
                             <constraint firstItem="LSX-ND-a83" firstAttribute="leading" secondItem="dfv-5x-x8E" secondAttribute="leading" id="T51-Rf-FpM"/>
                             <constraint firstItem="dfv-5x-x8E" firstAttribute="leading" secondItem="fLH-QL-5AX" secondAttribute="leading" id="V9O-dz-S31"/>
+                            <constraint firstItem="RmR-jE-tEL" firstAttribute="centerX" secondItem="fLH-QL-5AX" secondAttribute="centerX" id="XSG-gS-xgD"/>
                             <constraint firstAttribute="trailing" secondItem="ohC-Nr-QGd" secondAttribute="trailing" id="c7p-xV-AD2"/>
-                            <constraint firstItem="RmR-jE-tEL" firstAttribute="leading" secondItem="Ss8-h2-J5K" secondAttribute="leadingMargin" constant="93" id="kHx-O8-tBf"/>
                             <constraint firstItem="ohC-Nr-QGd" firstAttribute="leading" secondItem="Ss8-h2-J5K" secondAttribute="leading" id="lSn-fo-ltO"/>
                             <constraint firstItem="ohC-Nr-QGd" firstAttribute="centerX" secondItem="LSX-ND-a83" secondAttribute="centerX" id="mHl-G8-0Z7"/>
-                            <constraint firstItem="J74-IQ-6Ub" firstAttribute="top" secondItem="RmR-jE-tEL" secondAttribute="bottom" constant="297" id="nZ2-DF-PSS"/>
+                            <constraint firstItem="ohC-Nr-QGd" firstAttribute="width" secondItem="Ss8-h2-J5K" secondAttribute="width" id="mIp-Gn-4E6"/>
+                            <constraint firstItem="RmR-jE-tEL" firstAttribute="leading" secondItem="fLH-QL-5AX" secondAttribute="leading" id="nj0-Ts-Y23"/>
                             <constraint firstItem="fLH-QL-5AX" firstAttribute="top" secondItem="dfv-5x-x8E" secondAttribute="bottom" constant="22" id="oFu-Ur-h9Z"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RmR-jE-tEL" secondAttribute="trailing" constant="96" id="p6d-7z-yPW"/>
                             <constraint firstItem="yzt-lP-qga" firstAttribute="top" secondItem="cFG-n6-f8y" secondAttribute="bottom" constant="8" symbolic="YES" id="umX-PR-jSE"/>
-                            <constraint firstItem="RmR-jE-tEL" firstAttribute="top" secondItem="fLH-QL-5AX" secondAttribute="bottom" constant="35" id="wnX-xZ-hSU"/>
                         </constraints>
                     </view>
                     <connections>
@@ -141,7 +138,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hf-vW-blC">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
-                                        <color key="backgroundColor" red="1" green="0.66442827660000003" blue="0.098857042830000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -566,12 +563,12 @@
                                             <constraint firstAttribute="height" constant="36" id="crC-Ag-rTU"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                        <color key="textColor" red="1" green="0.66442827660000003" blue="0.098857042830000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOs-dC-ise">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
-                                        <color key="backgroundColor" red="1" green="0.66442827660000003" blue="0.098857042830000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -601,7 +598,7 @@
                                             <constraint firstAttribute="height" constant="36" id="ljL-H1-NUV"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                        <color key="textColor" red="1" green="0.66442827660000003" blue="0.098857042830000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -701,7 +698,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xs-b6-G6e">
                                         <rect key="frame" x="0.0" y="8" width="320" height="63"/>
-                                        <color key="backgroundColor" red="1" green="0.66442827660000003" blue="0.098857042830000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -741,7 +738,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contracted Price..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Foe-oC-TAJ">
                                                 <rect key="frame" x="8" y="37" width="271" height="30"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" red="1" green="0.66442827660000003" blue="0.098857042830000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
@@ -785,7 +782,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repairs..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Sq-eS-KHn">
                                                 <rect key="frame" x="8" y="211" width="271" height="30"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" red="1" green="0.66442827660000003" blue="0.098857042830000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
@@ -1498,7 +1495,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuV-fj-gdz">
                                 <rect key="frame" x="125" y="489" width="71" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.66442827660000003" blue="0.098857042830000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="ZTh-ta-CTs"/>
                                 </constraints>
@@ -1590,7 +1587,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vth-LX-jQd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
-                                <color key="backgroundColor" red="1" green="0.66442827660000003" blue="0.098857042830000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
